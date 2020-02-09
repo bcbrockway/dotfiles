@@ -33,16 +33,12 @@ set_satoshi () {
 }
 
 # General
-alias chromep="google-chrome --user-data-dir=/home/bbrockway/.config/chrome-personal &"
-alias chromew="google-chrome --user-data-dir=/home/bbrockway/.config/chrome-work &"
 alias cmcps="ps -ef | grep -i"
-alias gdrive="cd ~/gdrive/bobby.brockway@gmail.com"
+alias dirs="dirs -v "
 alias i3config="vim ~/.config/i3/config"
 alias watch="watch "
 alias galias="alias | grep "
 alias envgrep="env | grep "
-alias gitlab="cd ~/git/gitlab.com "
-alias github="cd ~/git/github.com "
 
 # Docker
 alias debash="docker_exec_bash" 
@@ -61,4 +57,3 @@ alias heti="host_exec "
 
 # Directories
 alias satoshi="set_satoshi"
-alias gketg="satoshi 2 && . ~/scripts/vault-auth.sh && cd ~/satoshi/gke-terragrunt-infrastructure"
