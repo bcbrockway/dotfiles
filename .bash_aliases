@@ -57,3 +57,14 @@ alias heti="host_exec "
 
 # Directories
 alias satoshi="set_satoshi"
+
+# yadm
+alias ya="yadm add"
+alias yc="yadm commit -v"
+alias yco="yadm checkout"
+alias yd="yadm diff"
+alias ydca="yadm diff --cached"
+alias yfa="yadm fetch --all --prune"
+alias yl="yadm pull"
+alias yp="yadm push"
+alias yst="yadm status"
