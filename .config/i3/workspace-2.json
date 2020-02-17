@@ -22,7 +22,7 @@
             "swallows": [
                {
                  "class": "^Chromium$",
-                 "instance": "^chromium\\ \\(\\/home\\/bbrockway\\/\\.config\\/chromium\\-work\\)$"
+                 "instance": "^chromium$"
                }
             ],
             "type": "con"

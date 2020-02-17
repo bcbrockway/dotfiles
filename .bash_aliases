@@ -39,6 +39,7 @@ alias i3config="vim ~/.config/i3/config"
 alias watch="watch "
 alias galias="alias | grep "
 alias envgrep="env | grep "
+alias authme=". ~/scripts/vault-auth.sh"
 
 # Docker
 alias debash="docker_exec_bash" 
