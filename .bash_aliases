@@ -28,7 +28,7 @@ set_satoshi () {
   fi
   echo PATH=$PATH
   if [[ ! $PWD =~ "satoshi" ]]; then
-    cd ~/satoshi
+    cd /data/satoshi
   fi
 }
 
@@ -40,6 +40,11 @@ alias watch="watch "
 alias galias="alias | grep "
 alias envgrep="env | grep "
 alias authme=". ~/scripts/vault-auth.sh"
+alias ds="cd /data/satoshi"
+alias dsk="cd /data/satoshi/kustomize"
+alias dst="cd /data/satoshi/gke-terragrunt-infrastructure"
+alias dp="cd /data/python"
+alias dpp="cd /data/python/portal"
 
 # Docker
 alias debash="docker_exec_bash" 
