@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $(uname -r) =~ "arch" ]]; then
+  if command yay; then
+    yay -Syu --needed \
+      ttf-dejavu \
+      ttf-font-awesome \
+      ttf-material-design-icons \
+      nerd-fonts-ubuntu-mono
+  fi
+fi
