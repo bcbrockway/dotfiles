@@ -1,3 +1,14 @@
+docker_exec_bash () {
+  docker exec -it $@ /bin/bash
+}
+
+flux_logs () {
+  local instance; instance=$1
+  local pod
+  pod=$(kubectl get pods -n "$instance" -ocustom-columns=NAME:.metadata.name | egrep -v 'NAME|memcached')
+  kubectl logs -f -n "$instance" "$pod" -c flux
+}
+
 host_exec () {
   local args; args="$@"
   echo "$args"
@@ -8,16 +19,12 @@ host_exec () {
   kubectl -n kube-system exec -it "$ppod" -- nsenter -t 1 -m -u -i -n -p
 }
 
-kubectl_exec_bash () {
-  kubectl exec -it $@ /bin/bash
-}
-
-docker_exec_bash () {
-  docker exec -it $@ /bin/bash
-}
-
 kubecfg_show () {
   kubecfg show $@ | vim -c 'set syntax=yaml' -
+}
+
+kubectl_exec_bash () {
+  kubectl exec -it $@ /bin/bash
 }
 
 set_satoshi () {
@@ -59,6 +66,8 @@ alias kzb="kustomize build . "
 alias kzdel="kustomize build . | kubectl delete -f - "
 
 # Kubectl
+alias fluxa="flux_logs flux-apps "
+alias fluxb="flux_logs flux-bootstrap "
 alias heti="host_exec "
 
 # Directories
