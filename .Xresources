@@ -1,1 +1,61 @@
-gdrive/dotfiles/precision-5540/.Xresources
+Xcursor.size: 16
+
+! Base colors
+*.foreground:  #E1E1E1
+*.background:  #1c2023
+*.cursorColor: #778899
+
+*.color0:  #1c2023
+*.color1:  #bf616a
+*.color2:  #a3be8c
+*.color3:  #ebcb8b
+*.color4:  #8fa1b3
+*.color5:  #b48ead
+*.color6:  #96b5b4
+*.color7:  #E1E1E1
+*.color8:  #919ba0
+*.color9:  #bf616a
+*.color10: #a3be8c
+*.color11: #ebcb8b
+*.color12: #8fa1b3
+*.color13: #b48ead
+*.color14: #96b5b4
+*.color15: #c0c5ce
+
+! URxvt
+URxvt*termName: rxvt-256color
+URxvt*iso14755: false
+URxvt*depth: 32
+URxvt*background: [95]#1C2023
+URxvt*internalBorder: 5
+URxvt*externalBorder: 0
+URxvt*letterSpace: -1
+URxvt.font: xft:monospace:size=9
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,selection-to-clipboard
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.m-c: perl:clipboard:copy
+URxvt.keysym.m-v: perl:clipboard:paste
+URxvt.urlLauncher: exo-open
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+URxvt.geometry: 90x34
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg: 15
+URxvt.tabbed.tab-bg: 4
+URxvt*buffered: false
+
+! URxvt Word Jumping
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+! URxvt Scrolling Behaviour
+URxvt.keysym.Shift-Up:   command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt*scrollBar:         false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
