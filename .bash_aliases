@@ -51,6 +51,7 @@ alias ds="cd /data/satoshi"
 alias dsk="cd /data/satoshi/kustomize"
 alias dst="cd /data/satoshi/gke-terragrunt-infrastructure"
 alias dp="cd /data/python"
+alias dpe="cd /data/python/experimental"
 alias dpp="cd /data/python/portal"
 
 # Docker
