@@ -1,11 +1,11 @@
 set $mod Mod4
 
 # border & title
-for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
-hide_edge_borders both
+#for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+#hide_edge_borders both
 
 # font
-font pango:monospace 8
+font pango:Fira Sans Medium 8
 
 # gaps
 gaps inner 8

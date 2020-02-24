@@ -42,7 +42,7 @@ set_satoshi () {
 # General
 alias cmcps="ps -ef | grep -i"
 alias dirs="dirs -v "
-alias i3config="vim ~/.config/i3/config"
+alias i3config="vim ~/.config/i3/config\#\#t && yadm alt"
 alias watch="watch "
 alias galias="alias | grep "
 alias envgrep="env | grep "
