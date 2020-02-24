@@ -75,6 +75,7 @@ alias heti="host_exec "
 alias satoshi="set_satoshi"
 
 # yadm
+alias y="yadm "
 alias ya="yadm add"
 alias yc="yadm commit -v"
 alias yco="yadm checkout"

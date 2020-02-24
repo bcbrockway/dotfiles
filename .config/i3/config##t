@@ -175,8 +175,8 @@ exec_always --no-startup-id feh --bg-scale ~/wallpaper/dark_spots_texture_backgr
 # Run on startup
 exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 144.0
 {% endif %}
-{% if yadm.hostname == "LON-LX-671" %}
-## LON-LX-671 CONFIG
+{% if yadm.hostname == "LON-LX-L-671" %}
+## LON-LX-L-671 CONFIG
 
 # Run on startup
 exec --no-startup-id optimus-manager-qt
