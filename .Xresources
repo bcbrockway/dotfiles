@@ -1,66 +1,41 @@
 Xcursor.size: 16
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
 
-! Base colors
-!*.foreground:  #E1E1E1
-!*.background:  #1c2023
-!*.cursorColor: #778899
-!
-!*.color0:  #1c2023
-!*.color1:  #bf616a
-!*.color2:  #a3be8c
-!*.color3:  #ebcb8b
-!*.color4:  #8fa1b3
-!*.color5:  #b48ead
-!*.color6:  #96b5b4
-!*.color7:  #E1E1E1
-!*.color8:  #919ba0
-!*.color9:  #bf616a
-!*.color10: #a3be8c
-!*.color11: #ebcb8b
-!*.color12: #8fa1b3
-!*.color13: #b48ead
-!*.color14: #96b5b4
-!*.color15: #c0c5ce
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
 
 ! URxvt
 URxvt*termName: rxvt-256color
@@ -69,8 +44,8 @@ URxvt*depth: 32
 !URxvt*background: [95]#1C2023
 URxvt*internalBorder: 5
 URxvt*externalBorder: 0
-URxvt*letterSpace: -1
-URxvt.font: xft:FiraCode Nerd Font:size=9
+URxvt*letterSpace: 0
+URxvt.font: xft:CaskaydiaCove Nerd Font:style=Book:size=9
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,selection-to-clipboard
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
