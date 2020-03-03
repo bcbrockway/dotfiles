@@ -8,8 +8,8 @@ set $mod Mod4
 font pango:Fira Sans Medium 8
 
 # gaps
-gaps inner 8
-gaps outer 0
+gaps inner 20
+gaps outer -15
 
 focus_follows_mouse no
 mouse_warping none

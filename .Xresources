@@ -44,8 +44,8 @@ URxvt*depth: 32
 !URxvt*background: [95]#1C2023
 URxvt*internalBorder: 5
 URxvt*externalBorder: 0
-URxvt*letterSpace: 0
-URxvt.font: xft:CaskaydiaCove Nerd Font:style=Book:size=9
+URxvt*letterSpace: -1
+URxvt.font: xft:UbuntuMono Nerd Font:style=Regular:size=11
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,selection-to-clipboard
 URxvt.copyCommand: xclip -i -selection clipboard
 URxvt.pasteCommand: xclip -o -selection clipboard
