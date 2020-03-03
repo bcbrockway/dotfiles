@@ -1,7 +1,7 @@
 set $mod Mod4
 
 # border & title
-#for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 #hide_edge_borders both
 
 # font
@@ -163,6 +163,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
+exec --no-startup-id picom -bCG
 exec --no-startup-id udiskie --tray
 
 # Run on refresh
