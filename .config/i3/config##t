@@ -163,7 +163,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
-exec --no-startup-id picom -bCG
 exec --no-startup-id udiskie --tray
 
 # Run on refresh
