@@ -4,9 +4,8 @@ docker_exec_bash () {
 
 flux_logs () {
   local instance; instance=$1
-  local pod
-  pod=$(kubectl get pods -n "$instance" -ocustom-columns=NAME:.metadata.name | egrep -v 'NAME|memcached')
-  kubectl logs -f -n "$instance" "$pod" -c flux
+  echo stern -n "$instance" "$instance" -c flux$ "${@:2}"
+  stern -n "$instance" "$instance" -c flux$ "${@:2}"
 }
 
 host_exec () {
@@ -14,7 +13,7 @@ host_exec () {
   echo "$args"
   local node; node=$(kubectl get pods -o json $args | jq -r .spec.nodeName)
   echo "$node"
-  local ppod; ppod=$(kubectl -n kube-system get pods -l name=host-conf -o json | jq -r '.items[] | select(.spec.nodeName|contains("'"$node"'")) | .metadata.name')
+  local ppod; ppod=$(kubectl -n kube-system get pods -l name=host-configurator -o json | jq -r '.items[] | select(.spec.nodeName|contains("'$node'")) | .metadata.name')
   echo "$ppod"
   kubectl -n kube-system exec -it "$ppod" -- nsenter -t 1 -m -u -i -n -p
 }
@@ -25,18 +24,6 @@ kubecfg_show () {
 
 kubectl_exec_bash () {
   kubectl exec -it $@ /bin/bash
-}
-
-set_satoshi () {
-  if [[ ! $PATH =~ "/bin/satoshi-[1-2]" ]]; then
-    export PATH=~/bin/satoshi-$1:$PATH
-  else
-    export PATH=$(echo $PATH | sed "s/satoshi-[1-2]/satoshi-$1/")
-  fi
-  echo PATH=$PATH
-  if [[ ! $PWD =~ "satoshi" ]]; then
-    cd /data/satoshi
-  fi
 }
 
 # General
@@ -62,6 +49,9 @@ alias dpull="docker pull"
 alias dpush="docker push"
 alias dr="docker run -it --rm"
 
+# Flux
+alias fluxctl="fluxctl --k8s-fwd-ns flux-apps "
+
 # Kustomize
 alias kzv="kustomize build . | vim -c 'set syntax=yaml' - "
 alias kza="kustomize build . | kubectl apply -f - "
@@ -72,9 +62,6 @@ alias kzdel="kustomize build . | kubectl delete -f - "
 alias fluxa="flux_logs flux-apps "
 alias fluxb="flux_logs flux-bootstrap "
 alias heti="host_exec "
-
-# Directories
-alias satoshi="set_satoshi"
 
 # yadm
 alias y="yadm "
