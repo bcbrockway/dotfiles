@@ -8,7 +8,7 @@ for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>
 font pango:Fira Sans Medium 8
 
 # gaps
-gaps inner 10
+gaps inner 0
 gaps outer 0
 
 focus_follows_mouse no
