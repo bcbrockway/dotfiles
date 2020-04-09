@@ -144,7 +144,8 @@ bar {
 }
 
 # custom key bindings
-bindsym $mod+Shift+p exec chromium --user-data-dir=/home/bbrockway/.config/chromium-personal
+#bindsym $mod+Shift+p exec chromium --user-data-dir=/home/bbrockway/.config/chromium-personal
+bindsym $mod+Shift+p exec firefox
 bindsym $mod+Shift+w exec chromium
 bindsym $mod+Shift+f exec chromium --app=https://www.flowdock.com
 bindsym $mod+Shift+x exec i3lock-fancy

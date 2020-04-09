@@ -27,13 +27,16 @@ kubectl_exec_bash () {
 }
 
 # General
+alias authme=". ~/scripts/vault-auth.sh"
 alias cmcps="ps -ef | grep -i"
 alias dirs="dirs -v "
+alias envgrep="env | grep "
+alias galias="alias | grep "
 alias i3config="vim ~/.config/i3/config\#\#t && yadm alt"
 alias watch="watch "
-alias galias="alias | grep "
-alias envgrep="env | grep "
-alias authme=". ~/scripts/vault-auth.sh"
+
+# Directories
+alias archinst="cd /data/bcbrockway/archinstall"
 alias ds="cd /data/satoshi"
 alias dsc="cd /data/satoshi/ci-cd"
 alias dsk8="cd /data/satoshi/kubernetes/k8s-bootstrap"
