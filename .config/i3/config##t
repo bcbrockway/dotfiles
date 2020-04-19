@@ -203,4 +203,7 @@ exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config
 # App to workspace assignment
 assign [class="^Chromium$" instance="^chromium\s\(\/home\/bbrockway\/\.config\/chromium-personal\)$"] → 1
 {% endif %}
-
+{% if yadm.hostname == "arch-vm" %}
+# VM Guest Config
+exec --no-startup-id VBoxClient-all
+{% endif %}
