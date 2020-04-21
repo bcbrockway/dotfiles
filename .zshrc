@@ -75,6 +75,9 @@ source $ZSH/oh-my-zsh.sh
 
 export GOPATH=~/go
 export PATH=$PATH:$HOME/bin:$GOPATH/bin
+export GOOGLE_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
+export GOOGLE_APPLICATION_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
+export FLUX_FORWARD_NAMESPACE=flux-apps
 
 # kubectx/kubens config
 export PATH=$PATH:~/git/github.com/ahmetb/kubectx
