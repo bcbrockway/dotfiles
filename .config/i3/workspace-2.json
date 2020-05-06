@@ -4,25 +4,26 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "tabbed",
-    "percent": 0.7,
+    "percent": 0.737109375,
     "type": "con",
     "nodes": [
         {
-            "border": "normal",
-            "current_border_width": 2,
+            "border": "pixel",
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 1420,
-               "width": 1265,
-               "x": 10,
-               "y": 10
+               "height": 1417,
+               "width": 1891,
+               "x": 0,
+               "y": 0
             },
-            "name": "New Tab - Google Chrome",
-            "percent": null,
+            "name": "Firefox",
+            "percent": 1,
             "swallows": [
                {
-                 "class": "^Chromium$",
-                 "instance": "^chromium$"
+                  "class": "^firefox$",
+                  "instance": "^Navigator$",
+                  "window_role": "^browser$"
                }
             ],
             "type": "con"
@@ -31,49 +32,30 @@
 }
 
 {
-    // tabbed split container with 2 children
+    // tabbed split container with 1 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "tabbed",
-    "percent": 0.3,
+    "percent": 0.262890625,
     "type": "con",
     "nodes": [
         {
-            "border": "normal",
-            "current_border_width": 2,
+            "border": "pixel",
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
-               "height": 576,
-               "width": 576,
-               "x": 992,
-               "y": 432
+               "height": 1417,
+               "width": 2558,
+               "x": 1,
+               "y": 1
             },
-            "name": "Google Hangouts – bbrockway@mintel.com",
-            "percent": 0.4,
+            "name": "Flowdock",
+            "percent": 1,
             "swallows": [
                {
-               "class": "^Chromium$",
-               "instance": "^crx_nckgahadagoaajjgafhacjanaoiihapd$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "normal",
-            "current_border_width": 2,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 1420,
-               "width": 1265,
-               "x": 10,
-               "y": 10
-            },
-            "name": "Satoshi (Mintel Group Ltd) - Flowdock",
-            "percent": 0.6,
-            "swallows": [
-               {
-               "class": "^Chromium$",
-               "instance": "^www\\.flowdock\\.com$"
+                  "class": "^Chromium$",
+                  "instance": "^www\\.flowdock\\.com$",
+                  "window_role": "^pop\\-up$"
                }
             ],
             "type": "con"

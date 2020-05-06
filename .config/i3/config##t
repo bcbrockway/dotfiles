@@ -144,10 +144,10 @@ bar {
 }
 
 # custom key bindings
-#bindsym $mod+Shift+p exec chromium --user-data-dir=/home/bbrockway/.config/chromium-personal
-bindsym $mod+Shift+p exec firefox
-bindsym $mod+Shift+w exec chromium
 bindsym $mod+Shift+f exec chromium --app=https://www.flowdock.com
+bindsym $mod+Shift+m exec firefox -P mintelcloud
+bindsym $mod+Shift+p exec firefox -P personal
+bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+x exec i3lock-fancy
 bindsym Print exec deepin-screenshot
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -165,6 +165,10 @@ exec --no-startup-id insync
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id udiskie --tray
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
+exec --no-startup-id firefox
+exec --no-startup-id chromium --app=https://www.flowdock.com
+
 
 # Run on refresh
 exec_always --no-startup-id xrdb -load ~/.Xresources
