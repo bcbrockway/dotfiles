@@ -66,6 +66,9 @@ alias fluxa="flux_logs flux-apps "
 alias fluxb="flux_logs flux-bootstrap "
 alias heti="host_exec "
 
+# Terraform / Terragrunt
+alias clean_tg='find /data -type d -regex ".*\.terra\(form\|grunt-cache\)" -exec rm -rf {} \;'
+
 # yadm
 alias y="yadm "
 alias ya="yadm add"
