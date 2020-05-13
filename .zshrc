@@ -127,7 +127,14 @@ $ '
 # Enable Go Modules
 export GO111MODULE=on
 
-INCLUDES=( "$HOME/.bash_aliases" "$HOME/.zshrc-ext" )
+# Include Files
+
+INCLUDES=(
+  "$HOME/.bash_aliases"
+  "$HOME/.secrets"
+  "$HOME/.zshrc-ext"
+)
+
 for include in "${INCLUDES[@]}"; do
   if [[ -f $include ]]; then
     source $include

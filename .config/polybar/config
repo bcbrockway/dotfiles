@@ -33,6 +33,7 @@ font-0 = "UbuntuMono Nerd Font:style=Bold:size=11:antialias=true;1"
 
 modules-left = i3
 modules-center = date
+modules-right = cpu memory filesystem
 
 tray-position = right
 tray-padding = 2
@@ -75,7 +76,7 @@ label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
-label-urgent = 
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
@@ -88,4 +89,23 @@ date = "%d/%m/%Y"
 time = %H:%M:%S
 
 label = %date% %time%
+
+[module/cpu]
+type = internal/cpu
+
+format = <label>
+
+label =   %percentage%%
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+
+label-mounted =   %used% / %total%
+
+[module/memory]
+type = internal/memory
+
+label =   %gb_used% / %gb_total%
 
