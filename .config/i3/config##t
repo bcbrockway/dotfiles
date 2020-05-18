@@ -8,7 +8,7 @@ for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>
 font pango:Fira Sans Medium 8
 
 # gaps
-gaps inner 0
+gaps inner 10
 gaps outer 0
 
 focus_follows_mouse no
@@ -157,6 +157,7 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Volctl"] floating enable
+for_window [class="firefox"] floating disable
 
 # Run on startup
 #exec --no-startup-id autocutsel -fork
@@ -164,6 +165,7 @@ for_window [class="Volctl"] floating enable
 exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
+exec --no-startup-id picom
 exec --no-startup-id polybar taskbar
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
@@ -174,7 +176,7 @@ exec --no-startup-id chromium --app=https://www.flowdock.com
 
 # Run on refresh
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id feh --bg-scale ~/wallpaper/dark_spots_texture_background_50355_1920x1080.jpg
+exec_always --no-startup-id feh --bg-scale ~/wallpaper/404846.jpg
 
 {% if yadm.hostname == "arch-desktop" %}
 ## ARCH-DESKTOP CONFIG

@@ -8,7 +8,7 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/taskbar]
-bottom = true
+bottom = false
 width = 100%
 height = 28
 radius = 0.0
@@ -26,14 +26,14 @@ border-color = #00000000
 padding-left = 0
 padding-right = 4
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = "UbuntuMono Nerd Font:style=Bold:size=11:antialias=true;1"
+font-0 = "UbuntuMono Nerd Font:style=Regular:size=11:antialias=true;2"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory filesystem
+modules-right = cpu memory filesystem wifi
 
 tray-position = right
 tray-padding = 2
@@ -82,9 +82,9 @@ label-urgent-padding = 1
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date = "%d/%m/%Y"
+date = "%a %d/%m/%Y"
 
 time = %H:%M:%S
 
@@ -92,20 +92,39 @@ label = %date% %time%
 
 [module/cpu]
 type = internal/cpu
+interval = 2
+
+label =  %percentage:3%%
 
 format = <label>
-
-label =   %percentage%%
 
 [module/filesystem]
 type = internal/fs
 
 mount-0 = /
 
-label-mounted =   %used% / %total%
+label-mounted =  %used:6% / %total:6%
 
 [module/memory]
 type = internal/memory
+interval = 2
 
-label =   %gb_used% / %gb_total%
+label =  %gb_used:7% / %gb_total:8%
 
+[module/wifi]
+type = internal/network
+
+interface = wlp3s0
+interval = 2
+
+label-connected = U:%upspeed:8% D:%downspeed:8%
+
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
+
+format-connected = <ramp-signal>  <label-connected>
+
+; vim:ft=dosini
