@@ -137,7 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # custom key bindings
-bindsym $mod+Shift+f exec chromium --app=https://www.flowdock.com
+#bindsym $mod+Shift+f exec chromium --app=https://www.flowdock.com
 bindsym $mod+Shift+m exec firefox -P mintelcloud
 bindsym $mod+Shift+p exec firefox -P personal
 bindsym $mod+Shift+w exec firefox
@@ -171,7 +171,7 @@ exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
 exec --no-startup-id firefox
-exec --no-startup-id chromium --app=https://www.flowdock.com
+#exec --no-startup-id chromium --app=https://www.flowdock.com
 
 
 # Run on refresh
