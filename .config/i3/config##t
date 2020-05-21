@@ -157,7 +157,8 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Volctl"] floating enable
-for_window [class="firefox"] floating disable
+for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
+for_window [class="firefox" title=".*Flowdock.*"] floating disable
 
 # Run on startup
 #exec --no-startup-id autocutsel -fork
@@ -165,14 +166,12 @@ for_window [class="firefox"] floating disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
-#exec --no-startup-id picom
+exec --no-startup-id picom
 exec --no-startup-id "sleep 1; polybar taskbar"
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
 exec --no-startup-id firefox
-#exec --no-startup-id chromium --app=https://www.flowdock.com
-
 
 # Run on refresh
 exec_always --no-startup-id xrdb -load ~/.Xresources
