@@ -165,8 +165,8 @@ for_window [class="firefox"] floating disable
 exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
-exec --no-startup-id picom
-exec --no-startup-id polybar taskbar
+#exec --no-startup-id picom
+exec --no-startup-id "sleep 1; polybar taskbar"
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
@@ -205,11 +205,6 @@ workspace 8 output DP1-3
 workspace 9 output DP1-3
 workspace 10 output DP1-3
 
-# Layout to workspace assignment
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
-
-# App to workspace assignment
-assign [class="^Chromium$" instance="^chromium\s\(\/home\/bbrockway\/\.config\/chromium-personal\)$"] → 1
 {% endif %}
 {% if yadm.hostname == "arch-vm" %}
 # VM Guest Config

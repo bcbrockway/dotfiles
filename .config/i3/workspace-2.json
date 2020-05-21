@@ -53,9 +53,10 @@
             "percent": 1,
             "swallows": [
                {
-                  "class": "^Chromium$",
-                  "instance": "^www\\.flowdock\\.com$",
-                  "window_role": "^pop\\-up$"
+                  "class": "^firefox$",
+                  "instance": "^Navigator$",
+                  "window_role": "^browser$",
+                  "title": "^https\\:\\/\\/www\\.flowdock\\.com"
                }
             ],
             "type": "con"
