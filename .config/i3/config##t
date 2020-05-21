@@ -173,7 +173,6 @@ exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config
 exec --no-startup-id firefox
 #exec --no-startup-id chromium --app=https://www.flowdock.com
 
-
 # Run on refresh
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id feh --bg-scale ~/wallpaper/404846.jpg
