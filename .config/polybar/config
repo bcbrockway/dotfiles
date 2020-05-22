@@ -9,10 +9,14 @@ alert = ${xrdb:color3:#222}
 
 [bar/taskbar]
 bottom = false
-width = 100%
+width = 100%:-10
 height = 28
 radius = 0.0
 fixed-center = true
+
+override-redirect = true
+offset-x = 5
+offset-y = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
