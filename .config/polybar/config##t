@@ -118,7 +118,11 @@ label =  %gb_used:7% / %gb_total:8%
 [module/wifi]
 type = internal/network
 
+{% if yadm.hostname == "LON-LX-L-671" %}
+interface = wlp59s0
+{% else %}
 interface = wlp3s0
+{% endif %}
 interval = 2
 
 label-connected = U:%upspeed:8% D:%downspeed:8%
