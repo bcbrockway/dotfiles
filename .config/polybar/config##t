@@ -15,6 +15,7 @@ radius = 0.0
 fixed-center = true
 
 override-redirect = true
+wm-restack = i3
 offset-x = 5
 offset-y = 5
 
