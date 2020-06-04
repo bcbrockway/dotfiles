@@ -2,8 +2,6 @@ set $mod Mod4
 
 # border & title
 for_window [class=".*"] border pixel 0
-#for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
-#hide_edge_borders both
 
 # font
 font pango:Fira Sans Medium 8
@@ -156,11 +154,12 @@ floating_maximum_size 1024x768
 
 # Floating defaults
 for_window [class="Blueman-manager"] floating enable
+for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
+for_window [class="firefox" title=".*Flowdock.*"] floating disable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Volctl"] floating enable
-for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
-for_window [class="firefox" title=".*Flowdock.*"] floating disable
+for_window [class="zoom" title="^Settings$"] floating enable
 
 # Run on startup
 #exec --no-startup-id autocutsel -fork
