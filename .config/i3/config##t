@@ -137,10 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # custom key bindings
-bindsym $mod+Shift+f exec chromium --app=https://www.flowdock.com
-bindsym $mod+Shift+m exec chromium --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
 bindsym $mod+Shift+p exec firefox -P personal
-bindsym $mod+Shift+w exec chromium --user-data-dir=/home/bbrockway/.config/chromium-work
 bindsym $mod+Shift+x exec i3lock-fancy
 bindsym Print exec deepin-screenshot
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -148,6 +145,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+
+# chromium for work
+bindsym $mod+Shift+f exec "chromium --app=https://www.flowdock.com; chromium --app-id=chfbpgnooceecdoohagngmjnndbbaeip"
+bindsym $mod+Shift+m exec chromium --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
+bindsym $mod+Shift+w exec chromium
+exec --no-startup-id chromium
 
 # Constrain floating window size
 floating_maximum_size 1024x768
@@ -172,7 +175,6 @@ exec --no-startup-id "sleep 1; polybar taskbar"
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
-exec --no-startup-id firefox
 
 # Run on refresh
 exec_always --no-startup-id xrdb -load ~/.Xresources
