@@ -193,7 +193,8 @@ exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 144.0
 exec --no-startup-id optimus-manager-qt
 
 # Run on refresh
-exec_always --no-startup-id /home/bbrockway/bin/setmon
+#exec_always --no-startup-id /home/bbrockway/bin/setmon
+exec_always --no-startup-id /home/bbrockway/.screenlayout/HomeAboveBelow.sh
 
 # Workspace screen assignment
 workspace 1 output eDP-1
