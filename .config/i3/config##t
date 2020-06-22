@@ -165,8 +165,6 @@ for_window [class="Volctl"] floating enable
 for_window [class="zoom" title="^Settings$"] floating enable
 
 # Run on startup
-#exec --no-startup-id autocutsel -fork
-#exec --no-startup-id autocutsel -selection PRIMARY -fork
 exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
@@ -177,24 +175,17 @@ exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
 
 # Run on refresh
+exec_always --no-startup-id /home/bbrockway/bin/setmon
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id feh --bg-scale ~/wallpaper/404846.jpg
 
-{% if yadm.hostname == "arch-desktop" %}
-## ARCH-DESKTOP CONFIG
-
-# Run on startup
-exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --rate 144.0
-{% endif %}
 {% if yadm.hostname == "LON-LX-L-671" %}
-## LON-LX-L-671 CONFIG
+
+#########################
+## LON-LX-L-671 CONFIG ##
+#########################
 
 # Run on startup
 exec --no-startup-id optimus-manager-qt
-
-# Run on refresh
-#exec_always --no-startup-id /home/bbrockway/bin/setmon
-exec_always --no-startup-id /home/bbrockway/.screenlayout/HomeAboveBelow.sh
 
 # Workspace screen assignment
 workspace 1 output eDP-1
@@ -209,7 +200,14 @@ workspace 9 output DP1-3
 workspace 10 output DP1-3
 
 {% endif %}
+
 {% if yadm.hostname == "arch-vm" %}
+
+#########################
+##      VM CONFIG      ##
+#########################
+
 # VM Guest Config
 exec --no-startup-id VBoxClient-all
+
 {% endif %}
