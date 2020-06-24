@@ -169,13 +169,12 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id insync
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
-exec --no-startup-id "sleep 1; polybar taskbar"
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bbrockway/.config/i3/workspace-2.json'"
 
 # Run on refresh
-exec_always --no-startup-id /home/bbrockway/bin/setmon
+exec_always --no-startup-id "sleep 1; /home/bbrockway/bin/setmon"
 exec_always --no-startup-id xrdb -load ~/.Xresources
 
 {% if yadm.hostname == "LON-LX-L-671" %}
