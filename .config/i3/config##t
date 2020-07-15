@@ -147,13 +147,13 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 
 # chromium for work
-bindsym $mod+Shift+f exec "chromium --app=https://www.flowdock.com; chromium --app-id=chfbpgnooceecdoohagngmjnndbbaeip"
+bindsym $mod+Shift+f exec "chromium --app-id=chfbpgnooceecdoohagngmjnndbbaeip; chromium --app=https://www.flowdock.com"
 bindsym $mod+Shift+m exec chromium --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
 bindsym $mod+Shift+w exec chromium
 exec --no-startup-id chromium
 
 # Constrain floating window size
-floating_maximum_size 1024x768
+floating_minimum_size 1024x768
 
 # Floating defaults
 for_window [class="Blueman-manager"] floating enable
