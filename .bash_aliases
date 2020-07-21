@@ -1,3 +1,10 @@
+attach_cluster () {
+  local cluster; cluster="$1"
+  local region; region="$2"
+  authme
+  gcloud container clusters get-credentials "$cluster" --region "$region"
+}
+
 docker_exec_bash () {
   docker exec -it $@ /bin/bash
 }
@@ -25,6 +32,18 @@ kubecfg_show () {
 kubectl_exec_bash () {
   kubectl exec -it $@ /bin/bash
 }
+
+watch_pods () {
+  local namespaces; namespaces=${1:-flux-apps,flux-bootstrap,image-service,portal,omni}
+  watch "eval 'kubectl --namespace='{$namespaces}' get pods;'"
+}
+
+# Clusters
+alias bb1="attach_cluster bb1 europe-west1"
+alias eu-qa1="attach_cluster eu-qa1 europe-west1"
+alias eu-prod1="attach_cluster eu-prod1 europe-west1"
+alias us-prod1="attach_cluster us-prod1 us-east4"
+alias vault="attach_cluster vault europe-west1"
 
 # General
 alias authme=". ~/scripts/vault-auth.sh"
@@ -71,6 +90,7 @@ alias kzdel="kustomize build . | kubectl delete -f - "
 alias fluxa="flux_logs flux-apps "
 alias fluxb="flux_logs flux-bootstrap "
 alias heti="host_exec "
+alias wgp="watch_pods "
 
 # Terraform / Terragrunt
 alias clean_tg='find /data -type d -regex ".*\.terra\(form\|grunt-cache\)" -exec rm -rf {} \;'
