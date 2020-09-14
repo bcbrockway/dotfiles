@@ -9,7 +9,11 @@
 
 # Backend to use: "xrender" or "glx".
 # GLX backend is typically much faster but depends on a sane driver.
+{% if yadm.hostname == "LON-LX-L-671" %}
+backend = "glx";
+{% else %}
 backend = "xrender";
+{% endif %}
 
 #################################
 #
@@ -111,9 +115,10 @@ frame-opacity = 1;
 inactive-opacity-override = false;
 
 opacity-rule = [
-  "90:class_g = 'jetbrains-goland'",
-  "90:class_g = 'Spotify'",
-  "90:class_g = 'URxvt'"
+  "80:class_g = 'jetbrains-goland'",
+  "80:class_g = 'jetbrains-pycharm-ce'",
+  "80:class_g = 'Spotify'",
+  "80:class_g = 'URxvt'"
 ];
 
 blur-kern = "7x7box";

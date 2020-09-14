@@ -1,0 +1,6 @@
+.npmrc
+.OpenVPN/mintel/ca.crt
+.OpenVPN/mintel/LON-LX-L-671.crt
+.OpenVPN/mintel/LON-LX-L-671.key
+.pip/pip.conf
+.secrets

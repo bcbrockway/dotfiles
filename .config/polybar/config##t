@@ -8,11 +8,17 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/taskbar]
+monitor = ${env:MONITOR:}
 bottom = false
-width = 100%
+width = 100%:-10
 height = 28
 radius = 0.0
 fixed-center = true
+
+override-redirect = true
+wm-restack = i3
+offset-x = 5
+offset-y = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -29,9 +35,17 @@ padding-right = 4
 module-margin-left = 2
 module-margin-right = 2
 
+{% if yadm.hostname == "LON-LX-L-671" %}
+font-0 = "UbuntuMono Nerd Font:style=Regular:size=10:antialias=true;2"
+{% else %}
 font-0 = "UbuntuMono Nerd Font:style=Regular:size=11:antialias=true;2"
+{% endif %}
 
+{% if yadm.hostname == "LON-LX-L-671" %}
+modules-left = i3 battery
+{% else %}
 modules-left = i3
+{% endif %}
 modules-center = date
 modules-right = cpu memory filesystem wifi
 
@@ -80,6 +94,26 @@ label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+;full-at = 99
+
+battery = BAT0
+adapter = AC
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
 [module/date]
 type = internal/date
 interval = 1
@@ -114,7 +148,11 @@ label =  %gb_used:7% / %gb_total:8%
 [module/wifi]
 type = internal/network
 
+{% if yadm.hostname == "LON-LX-L-671" %}
+interface = wlp59s0
+{% else %}
 interface = wlp3s0
+{% endif %}
 interval = 2
 
 label-connected = U:%upspeed:8% D:%downspeed:8%

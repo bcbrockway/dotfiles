@@ -79,6 +79,10 @@ export GOOGLE_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
 export GOOGLE_APPLICATION_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
 export FLUX_FORWARD_NAMESPACE=flux-apps
 
+# Docker
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 # kubectx/kubens config
 export PATH=$PATH:~/git/github.com/ahmetb/kubectx
 
