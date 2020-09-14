@@ -1,8 +1,12 @@
 attach_cluster () {
   local cluster; cluster="$1"
   local region; region="$2"
-  authme
+  . ~/scripts/vault-auth.sh
   gcloud container clusters get-credentials "$cluster" --region "$region"
+}
+
+b64_decode () {
+  echo "$1" | base64 -d
 }
 
 docker_exec_bash () {
@@ -34,7 +38,7 @@ kubectl_exec_bash () {
 }
 
 watch_pods () {
-  local namespaces; namespaces=${1:-flux-apps,flux-bootstrap,image-service,portal,omni}
+  local namespaces; namespaces=flux-apps,flux-bootstrap,${1:-image-service,portal,omni}
   watch "eval 'kubectl --namespace='{$namespaces}' get pods;'"
 }
 
@@ -42,15 +46,17 @@ watch_pods () {
 alias bb1="attach_cluster bb1 europe-west1"
 alias eu-qa1="attach_cluster eu-qa1 europe-west1"
 alias eu-prod1="attach_cluster eu-prod1 europe-west1"
+alias nb1="attach_cluster nb1 europe-west1"
 alias us-prod1="attach_cluster us-prod1 us-east4"
 alias vault="attach_cluster vault europe-west1"
 
 # General
 alias authme=". ~/scripts/vault-auth.sh"
 alias cmcps="ps -ef | grep -i"
+alias denc="b64_decode "
 alias dirs="dirs -v "
-alias envgrep="env | grep "
 alias galias="alias | grep "
+alias genv="env | grep "
 alias i3config="vim ~/.config/i3/config\#\#t && yadm alt"
 alias watch="watch "
 
