@@ -137,6 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # custom key bindings
+bindsym $mod+x exec urxvt -e ranger
 bindsym $mod+Shift+p exec chromium --user-data-dir=/home/bbrockway/.config/chromium-personal
 bindsym $mod+Shift+x exec i3lock-fancy
 bindsym Print exec deepin-screenshot
@@ -158,6 +159,7 @@ for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
 for_window [class="firefox" title=".*Flowdock.*"] floating disable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable, resize set 1024 768
+for_window [class="URxvt" title="ranger"] floating enable, resize set 1000 600
 for_window [class="Volctl"] floating enable
 for_window [class="zoom" title="^Settings$"] floating enable
 

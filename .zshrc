@@ -86,6 +86,9 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 # kubectx/kubens config
 export PATH=$PATH:~/git/github.com/ahmetb/kubectx
 
+# vpa-scraper
+export PATH=$PATH:/data/gitlab.com/mintel/satoshi/tools/vpa-scraper
+
 # GPG config
 export GNUPGHOME=$HOME/.gnupg
 
