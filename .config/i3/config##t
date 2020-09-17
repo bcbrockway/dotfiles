@@ -25,7 +25,7 @@ mouse_warping none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -sl 200000
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
