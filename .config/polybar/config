@@ -33,9 +33,10 @@ module-margin-left = 2
 module-margin-right = 2
 
 font-0 = "UbuntuMono Nerd Font:style=Regular:size=10:antialias=true;2"
+font-1 = "源ノ角ゴシック JP:style=Regular:size=10:antialias=true;1"
 
 modules-left = i3 battery
-modules-center = date
+modules-center = date-rome date-london date-chicago 
 modules-right = cpu memory filesystem wifi
 
 tray-position = right
@@ -67,21 +68,32 @@ label-mode = %mode%
 label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.primary}
 
-label-focused = %name%
+label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 1
 
-label-unfocused = %name%
+label-unfocused = %icon%
 label-unfocused-padding = 1
 
-label-visible = V %index%
+label-visible = V %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
-label-urgent = %name%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
+
+ws-icon-0 = 1;一
+ws-icon-1 = 2;二
+ws-icon-2 = 3;三
+ws-icon-3 = 4;四
+ws-icon-4 = 5;五
+ws-icon-5 = 6;六
+ws-icon-6 = 7;七
+ws-icon-7 = 8;八
+ws-icon-8 = 9;九
+ws-icon-9 = 10;十
 
 [module/battery]
 type = internal/battery
@@ -97,21 +109,37 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 
+label-full =  %percentage%%
 label-charging =  %percentage%%
 format-charging = <label-charging>
 
 label-discharging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
 
-[module/date]
-type = internal/date
-interval = 1
+[module/date-london]
+type = custom/script
+exec = TZ=Europe/London date +"LON: %H:%M"
+interval = 5
 
-date = "%a %d/%m/%Y"
+[module/date-rome]
+type = custom/script
+exec = TZ=Europe/Rome date +"ROM: %H:%M"
+interval = 5
 
-time = %H:%M:%S
+[module/date-chicago]
+type = custom/script
+exec = TZ=US/Central date +"CHI: %H:%M"
+interval = 30
 
-label = %date% %time%
+#[module/date-london]
+#type = internal/date
+#interval = 1
+#
+#date = "%a %d/%m/%Y"
+#
+#time = %H:%M:%S
+#
+#label = %date% %time%
 
 [module/cpu]
 type = internal/cpu
