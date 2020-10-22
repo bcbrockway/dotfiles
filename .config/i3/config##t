@@ -7,9 +7,9 @@ for_window [class=".*"] border pixel 0
 font pango:Fira Sans Medium 8
 
 # gaps
-gaps inner 5
+gaps inner 10
 gaps outer 0 
-gaps top 33
+gaps top 28
 
 focus_follows_mouse no
 mouse_warping none
