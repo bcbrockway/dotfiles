@@ -33,9 +33,9 @@ module-margin-right = 2
 font-0 = "UbuntuMono Nerd Font:style=Regular:size=10:antialias=true;2"
 font-1 = "源ノ角ゴシック JP:style=Regular:size=10:antialias=true;1"
 
-modules-left = i3 battery
+modules-left = i3 cpu temp wifi
 modules-center = time-shanghai time-rome date time-london time-chicago 
-modules-right = cpu memory filesystem wifi
+modules-right = memory filesystem battery
 
 tray-position = right
 tray-padding = 2
@@ -138,11 +138,18 @@ interval = 30
 type = internal/date
 interval = 1
 
-date = "%d/%m/%Y"
+date = "%a %d %b"
 
 time = %H:%M:%S
 
 label = %date%
+
+[module/temp]
+type = internal/temperature
+
+thermal-zone=4
+
+label =  %temperature-c%
 
 [module/cpu]
 type = internal/cpu
