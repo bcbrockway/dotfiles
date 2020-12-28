@@ -5,6 +5,9 @@ set -ex
 if [[ $(uname -r) =~ "arch" ]]; then
   if command -v yay; then
     yay -Sy -a --answerdiff N --answerclean A --needed --noconfirm --quiet \
-      nerd-fonts-ubuntu-mono
+      adobe-source-han-sans-jp-fonts \
+      nerd-fonts-ubuntu-mono \
+      ttf-droid \
+      ttf-font-awesome
   fi
 fi
