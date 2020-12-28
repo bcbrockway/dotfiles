@@ -140,7 +140,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x exec urxvt -e ranger
 bindsym $mod+Shift+p exec chromium --user-data-dir=/home/bbrockway/.config/chromium-personal
 bindsym $mod+Shift+x exec i3lock-fancy-rapid 5 3
-bindsym Print exec deepin-screenshot
+bindsym Print exec deepin-screen-recorder
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -166,7 +166,7 @@ for_window [class="zoom" title="^Settings$"] floating enable
 # Run on startup
 exec --no-startup-id blueman-applet
 #exec --no-startup-id /home/bbrockway/scripts/start-work-chromium.sh
-exec --no-startup-id insync
+exec --no-startup-id insync start
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec --no-startup-id volctl
