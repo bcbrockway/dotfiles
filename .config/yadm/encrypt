@@ -4,3 +4,5 @@
 .OpenVPN/mintel/LON-LX-L-671.key
 .pip/pip.conf
 .secrets
+.ssh/id_rsa
+.ssh/id_rsa.pub
