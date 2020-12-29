@@ -8,6 +8,8 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/taskbar]
+enable-ipc = true
+
 monitor = ${env:MONITOR:}
 bottom = false
 ;width = 100%:-20

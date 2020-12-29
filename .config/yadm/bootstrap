@@ -4,10 +4,11 @@ set -ex
 
 if [[ $(uname -r) =~ "arch" ]]; then
   if command -v yay; then
-    yay -Sy -a --answerdiff N --answerclean A --needed --noconfirm --quiet \
+    yay -Sy --answerdiff N --answerclean A --needed --noconfirm --quiet \
       adobe-source-han-sans-jp-fonts \
       nerd-fonts-ubuntu-mono \
       ttf-droid \
-      ttf-font-awesome
+      ttf-font-awesome \
+      xeventbind
   fi
 fi
