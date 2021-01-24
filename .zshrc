@@ -128,7 +128,7 @@ else
 fi
 
 # kube-ps1
-PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)$(kube_ps1)
+PROMPT='%{$fg_bold[green]%}${AWS_VAULT}%{$reset_color%}${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)$(kube_ps1)
 $ '
 
 # Enable Go Modules

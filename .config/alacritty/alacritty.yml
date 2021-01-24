@@ -1,5 +1,52 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+schemes:
+  terminal-sexy-default: &terminal-sexy-default
+    primary:
+      background: '0x1d1f21'
+      foreground: '0xc5c8c6'
+    normal:
+      black:   '0x282a2e'
+      red:     '0xa54242'
+      green:   '0x8c9440'
+      yellow:  '0xde935f'
+      blue:    '0x5f819d'
+      magenta: '0x85678f'
+      cyan:    '0x5e8d87'
+      white:   '0x707880'
+    bright:
+      black:   '0x373b41'
+      red:     '0xcc6666'
+      green:   '0xb5bd68'
+      yellow:  '0xf0c674'
+      blue:    '0x81a2be'
+      magenta: '0xb294bb'
+      cyan:    '0x8abeb7'
+      white:   '0xc5c8c6'
+  terminal-sexy-default-prod: &terminal-sexy-default-prod
+    primary:
+      background: '0x5e2727'
+      foreground: '0xc5c8c6'
+    normal:
+      black:   '0x282a2e'
+      red:     '0xa54242'
+      green:   '0x8c9440'
+      yellow:  '0xde935f'
+      blue:    '0x5f819d'
+      magenta: '0x85678f'
+      cyan:    '0x5e8d87'
+      white:   '0x707880'
+    bright:
+      black:   '0x373b41'
+      red:     '0xcc6666'
+      green:   '0xb5bd68'
+      yellow:  '0xf0c674'
+      blue:    '0x81a2be'
+      magenta: '0xb294bb'
+      cyan:    '0x8abeb7'
+      white:   '0xc5c8c6'
+
+
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -162,110 +209,7 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
-colors:
-  # Default colors
-  primary:
-    background: '#1d1f21'
-    foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #search:
-    # Allowed values are CellForeground and CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-
-    #bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
-
-  # Normal colors
-  normal:
-    black:   '#282a2e'
-    red:     '#a54242'
-    green:   '#8c9440'
-    yellow:  '#de935f'
-    blue:    '#5f819d'
-    magenta: '#85678f'
-    cyan:    '#5e8d87'
-    white:   '#707880'
-
-  # Bright colors
-  bright:
-    black:   '#373b41'
-    red:     '#cc6666'
-    green:   '#b5bd68'
-    yellow:  '#f0c674'
-    blue:    '#81a2be'
-    magenta: '#b294bb'
-    cyan:    '#8abeb7'
-    white:   '#c5c8c6'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
+colors: *terminal-sexy-default
 
 # Bell
 #
