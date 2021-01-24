@@ -1,0 +1,35 @@
+{
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "[jsonnet]": {
+        "editor.tabSize": 2,
+    },
+    "dart.debugExternalLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "dart.flutterSdkPath": "/home/bbrockway/snap/flutter/common/flutter",
+    "editor.fontSize": 12,
+    "editor.tabSize": 2,
+    "editor.rulers": [120],
+    "go.formatTool": "goimports",
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.showStartPage": false,
+    "terminal.integrated.fontSize": 12,
+    "update.mode": "none",
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+}
