@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#set -x
+set -x
 
 export XAUTHORITY=/home/bbrockway/.Xauthority
 export DISPLAY=:0.0
@@ -8,7 +8,6 @@ export DISPLAY=:0.0
 PRIMARY_DISPLAY=$(/usr/bin/xrandr | grep primary | grep connected | cut -f1 -d' ')
 HOSTNAME=$(cat /etc/hostname)
 LOCKFILE="/tmp/setmon.lock"
-BACKGROUND="/home/bbrockway/wallpaper/sunlitForest.jpg"
 
 if [[ $HOSTNAME = LON-LX-L-671 ]] || [[ $HOSTNAME = arch-xps13 ]]; then
   
@@ -38,25 +37,11 @@ elif [[ $HOSTNAME == arch-desktop ]]; then
   SINGLE_DISPLAY_ARGS="--mode 2560x1440 --pos 0x0 --rate 144.0"
 fi
 
-function restart_polybar() {
-  pkill -f polybar
-  while pgrep -x polybar >/dev/null; do
-    sleep 0.5
-  done
-  /home/bbrockway/bin/launch_polybar
-}
-
-function run_feh() {
-  feh --bg-scale "$BACKGROUND"
-}
-
 function docked() {
   cmd="/usr/bin/xrandr --output $PRIMARY_DISPLAY --primary $FIRST_DISPLAY_ARGS"
   cmd+=" --output $EXTERNAL $SECOND_DISPLAY_ARGS"
   echo "$cmd"
   $cmd
-  restart_polybar
-  run_feh
 }
 
 function undocked() {
@@ -66,8 +51,6 @@ function undocked() {
   done
   echo "$cmd"
   $cmd
-  restart_polybar
-  run_feh
 }
 
 function quit() {
