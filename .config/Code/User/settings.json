@@ -12,7 +12,7 @@
         "editor.wordBasedSuggestions": false
     },
     "[jsonnet]": {
-        "editor.tabSize": 2,
+        "editor.tabSize": 2
     },
     "dart.debugExternalLibraries": false,
     "dart.debugSdkLibraries": false,
@@ -32,4 +32,7 @@
     "explorer.confirmDelete": false,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "docker.showStartPage": false,
 }
