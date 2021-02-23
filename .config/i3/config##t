@@ -137,7 +137,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # custom key bindings
-bindsym $mod+x exec urxvt -e ranger
+bindsym $mod+x exec alacritty -t ranger -e ranger
 bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
 bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-mintel-workspace.sh
 bindsym $mod+Shift+m exec chromium --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
@@ -158,19 +158,18 @@ for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
 for_window [class="firefox" title=".*Flowdock.*"] floating disable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable, resize set 1024 768
-for_window [class="URxvt" title="ranger"] floating enable, resize set 1000 600
+for_window [class="Alacritty" title="ranger"] floating enable, resize set 1000 600
 for_window [class="Volctl"] floating enable
 for_window [class="zoom" title="^Settings$"] floating enable
 
 # Run on startup
 exec --no-startup-id blueman-applet
-#exec --no-startup-id /home/bbrockway/scripts/start-work-chromium.sh
 exec --no-startup-id insync start
 exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec --no-startup-id volctl
 exec --no-startup-id udiskie --tray
-exec --no-startup-id /home/bbrockway/bin/screen-reload
+exec --no-startup-id /home/bbrockway/bin/setmon && /home/bbrockway/bin/screen-reload
 
 # Run on refresh
 #exec_always --no-startup-id /home/bbrockway/bin/setmon
