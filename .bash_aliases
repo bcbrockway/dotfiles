@@ -44,9 +44,9 @@ watch_pods () {
 
 # Clusters
 alias bb1="attach_cluster bb1 europe-west1"
+alias cw1="attach_cluster cw1 europe-west1"
 alias eu-qa1="attach_cluster eu-qa1 europe-west1"
 alias eu-prod1="attach_cluster eu-prod1 europe-west1"
-alias nb1="attach_cluster nb1 europe-west1"
 alias us-prod1="attach_cluster us-prod1 us-east4"
 alias vault="attach_cluster vault europe-west1"
 

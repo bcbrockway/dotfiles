@@ -26,7 +26,6 @@
     "python.showStartPage": false,
     "terminal.integrated.fontSize": 12,
     "update.mode": "none",
-    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
