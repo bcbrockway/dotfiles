@@ -100,6 +100,8 @@ alias wgp="watch_pods "
 
 # Terraform / Terragrunt
 alias clean_tg='find /data -type d -regex ".*\.terra\(form\|grunt-cache\)" -exec rm -rf {} \;'
+alias ta='terragrunt apply --terragrunt-source-update'
+alias tp='terragrunt plan -out=/tmp/planfile'
 
 # yadm
 alias y="yadm "
