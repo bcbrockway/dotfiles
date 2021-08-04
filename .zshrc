@@ -80,6 +80,9 @@ export GOOGLE_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
 export GOOGLE_APPLICATION_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
 export FLUX_FORWARD_NAMESPACE=flux-apps
 
+# AWS
+export AWS_PAGER=""
+
 # Docker
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
@@ -89,6 +92,15 @@ export PATH=$PATH:~/git/github.com/ahmetb/kubectx
 
 # vpa-scraper
 export PATH=$PATH:/data/gitlab.com/mintel/satoshi/tools/vpa-scraper
+
+# ail scripts
+export PATH=$PATH:/data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live/scripts
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# pipx
+export PATH="$PATH:/home/bbrockway/.local/bin"
 
 # GPG config
 export GNUPGHOME=$HOME/.gnupg

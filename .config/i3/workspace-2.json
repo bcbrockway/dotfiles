@@ -4,7 +4,7 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "tabbed",
-    "percent": 0.737109375,
+    "percent": 0.678984375,
     "type": "con",
     "nodes": [
         {
@@ -18,11 +18,11 @@
                "y": 0
             },
             "name": "the use of hangouts - i3 FAQ - Mozilla Firefox",
-            "percent": 0.5,
+            "percent": 1,
             "swallows": [
                {
-               "class": "^Chromium$",
-               "instance": "^chromium$"
+               "class": "^Google-chrome$",
+               "instance": "^google-chrome$"
                }
             ],
             "type": "con"
@@ -35,7 +35,7 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "tabbed",
-    "percent": 0.262890625,
+    "percent": 0.321015625,
     "type": "con",
     "nodes": [
         {
@@ -52,7 +52,7 @@
             "percent": 0.5,
             "swallows": [
                {
-               "class": "^Chromium$",
+               "class": "^Google-chrome$",
                "instance": "^www\\.flowdock\\.com$"
                }
             ],
@@ -68,12 +68,12 @@
                "x": 345,
                "y": 25
             },
-            "name": "Hangouts",
+            "name": "Google Chat",
             "percent": 0.5,
             "swallows": [
                {
-               "class": "^Chromium$",
-               "instance": "^crx_chfbpgnooceecdoohagngmjnndbbaeip$"
+               "class": "^Google-chrome$",
+               "instance": "^mail.google.com__chat_u_0$"
                }
             ],
             "type": "con"
