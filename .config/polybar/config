@@ -232,7 +232,7 @@ label =   %gb_used%
 [module/wifi]
 type = internal/network
 
-interface = wlp59s0
+interface = wlp58s0
 interval = 2
 
 label-connected = %upspeed% %downspeed%
