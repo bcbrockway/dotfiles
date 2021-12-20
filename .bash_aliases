@@ -4,12 +4,8 @@
 ##  AWS  ##
 ###########
 
-al () {
-  aws-vault login mintel:"$1" --duration=12h
-}
-
 ae () {
-  aws-vault exec mintel:"$1" --duration=12h --
+  AWS_PROFILE="$1" zsh
 }
 
 adecode () {
@@ -67,6 +63,9 @@ alias dirs="dirs -v "
 alias galias="alias | grep "
 alias genv="env | grep "
 alias i3config="vim ~/.config/i3/config\#\#t && yadm alt"
+alias ls='ls --color=tty --group-directories-first'
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
 alias watch="watch "
 
 ##################
@@ -127,7 +126,7 @@ set-finalizer () {
       args=(-n argocd)
       ;;
     none)
-      json='{ "metadata": { "finalizers": [] }}'
+      json='{ "spec": { "finalizers": [] }}'
       ;;
     *)
       echo "Not supported"

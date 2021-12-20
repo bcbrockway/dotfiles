@@ -56,4 +56,5 @@
         "jupyter-notebook": "left"
     },
     "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 1,
 }

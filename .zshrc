@@ -76,8 +76,6 @@ source $ZSH/oh-my-zsh.sh
 
 export GOPATH=~/go
 export PATH=$PATH:$HOME/bin:$GOPATH/bin
-export GOOGLE_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
-export GOOGLE_APPLICATION_CREDENTIALS=/dev/shm/vault-sidekick/output/credentials.json
 export FLUX_FORWARD_NAMESPACE=flux-apps
 
 # AWS
@@ -143,6 +141,12 @@ fi
 # kube-ps1
 PROMPT='%{$fg_bold[green]%}${AWS_VAULT}%{$reset_color%}${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)$(kube_ps1)
 $ '
+if [ -n "$AWS_PROFILE" ]; then
+  export PROMPT="$(tput setab 1)<<${AWS_PROFILE}>>$(tput sgr0) ${PROMPT}"
+  if ! aws sts get-caller-identity; then
+    aws sso login --profile "$AWS_PROFILE"
+  fi
+fi;
 
 # Enable Go Modules
 export GO111MODULE=on

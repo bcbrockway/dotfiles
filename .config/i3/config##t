@@ -48,6 +48,7 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+s exec /home/bbrockway/scripts/i3-display-swap.sh
 
 # move workspaces
 bindsym $mod+Control+Left move workspace to output left
@@ -65,7 +66,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -167,7 +168,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id insync start
 exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends
-exec --no-startup-id volctl
+exec --no-startup-id pa-applet
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "sleep 0.1; autorandr --change"
 #exec --no-startup-id /home/bbrockway/bin/setmon && /home/bbrockway/bin/screen-reload
