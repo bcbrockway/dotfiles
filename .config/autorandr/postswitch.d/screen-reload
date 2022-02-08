@@ -2,7 +2,7 @@
 
 set -e
 
-BACKGROUND="/home/bbrockway/wallpaper/sunlitForest.jpg"
+BACKGROUND="/home/bbrockway/wallpaper/dolomites.jpg"
 
 
 function reload_polybar() {
@@ -26,5 +26,11 @@ function reload_feh() {
   feh --bg-scale "$BACKGROUND"
 }
 
+function reload_qtile() {
+  qtile cmd-obj -o cmd -f reload_config
+}
+
 reload_polybar
 reload_feh
+#sleep 5
+#reload_qtile

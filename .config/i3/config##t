@@ -1,10 +1,33 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Fira Sans Medium 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
 set $mod Mod4
 
 # border & title
 for_window [class=".*"] border pixel 5
 
 # appearance
-font pango:Fira Sans Medium 8
+
 
 # gaps
 gaps inner 10
@@ -140,7 +163,7 @@ bindsym $mod+r mode "resize"
 # custom key bindings
 bindsym $mod+x exec alacritty -t Ranger -e ranger
 bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
-bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-mintel-workspace.sh
+bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-chat-workspace.sh
 bindsym $mod+Shift+m exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
 bindsym $mod+Shift+p exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-personal
 bindsym $mod+Shift+w exec google-chrome-stable
@@ -153,8 +176,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 
 # Floating defaults
+assign [class="zoom"] 10
+assign [class="Google-chrome" instance="google-chrome.*"] 2
 for_window [class="Arandr"] floating enable, resize set 1024 768
 for_window [class="Blueman-manager"] floating enable
+for_window [class="dolphin"] floating enable
 for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
 for_window [class="firefox" title=".*Flowdock.*"] floating disable
 for_window [class="Nm-connection-editor"] floating enable
@@ -164,17 +190,15 @@ for_window [class="Volctl"] floating enable
 for_window [class="zoom" title="^Settings$"] floating enable
 
 # Run on startup
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
 exec --no-startup-id insync start
 exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id pa-applet
 exec --no-startup-id udiskie --tray
 exec --no-startup-id "sleep 0.1; autorandr --change"
-#exec --no-startup-id /home/bbrockway/bin/setmon && /home/bbrockway/bin/screen-reload
 
 # Run on refresh
-#exec_always --no-startup-id /home/bbrockway/bin/setmon
 exec_always --no-startup-id xrdb -load ~/.Xresources
 
 {% if yadm.hostname == "LON-LX-L-671" %}
