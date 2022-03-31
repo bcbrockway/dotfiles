@@ -1,5 +1,4 @@
 Xft.dpi: 96
-
 Xcursor.size: 16
 
 ! special
@@ -38,41 +37,3 @@ Xcursor.size: 16
 ! white
 *.color7:       #707880
 *.color15:      #c5c8c6
-
-! URxvt
-URxvt*termName: rxvt-256color
-URxvt*iso14755: false
-URxvt*depth: 32
-!URxvt*background: [95]#1C2023
-URxvt*internalBorder: 5
-URxvt*externalBorder: 0
-URxvt*letterSpace: -1
-URxvt.font: xft:UbuntuMono Nerd Font:style=Regular:size=11
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,selection-to-clipboard
-URxvt.copyCommand: xclip -i -selection clipboard
-URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.m-c: perl:clipboard:copy
-URxvt.keysym.m-v: perl:clipboard:paste
-URxvt.urlLauncher: exo-open
-URxvt.underlineURLs: true
-URxvt.urlButton: 1
-URxvt.geometry: 90x34
-URxvt.tabbed.tabbar-fg: 4
-URxvt.tabbed.tabbar-bg: 16
-URxvt.tabbed.tab-fg: 15
-URxvt.tabbed.tab-bg: 4
-URxvt*buffered: false
-
-! URxvt Word Jumping
-URxvt.keysym.Control-Up:    \033[1;5A
-URxvt.keysym.Control-Down:  \033[1;5B
-URxvt.keysym.Control-Left:  \033[1;5D
-URxvt.keysym.Control-Right: \033[1;5C
-
-! URxvt Scrolling Behaviour
-URxvt.keysym.Shift-Up:   command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
-URxvt*scrollBar:         false
-URxvt*scrollTtyKeypress: true
-URxvt*scrollTtyOutput:   false
-URxvt*scrollWithBuffer:  true

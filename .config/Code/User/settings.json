@@ -28,6 +28,7 @@
         "*.hcl*": "terraform",
         "*.libsonnet.jinja": "jsonnet",
         "*.jsonnet.jinja": "jsonnet",
+        "PKGBUILD": "plaintext",
     },
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -56,6 +57,6 @@
         "jupyter-notebook": "left"
     },
     "redhat.telemetry.enabled": false,
-    "window.zoomLevel": 1,
     "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 1,
 }

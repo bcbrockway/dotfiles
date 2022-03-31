@@ -1,0 +1,13 @@
+[user]
+	name = Bobby Brockway
+	email = bbrockway@mintel.com
+[core]
+	excludesfile = /home/bbrockway/.gitignore-global
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log

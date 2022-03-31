@@ -1,7 +1,8 @@
+.aws/config
+.gnupg/*
+.gnupg/private-keys-v1.d/*
 .npmrc
-.OpenVPN/mintel/ca.crt
-.OpenVPN/mintel/LON-LX-L-671.crt
-.OpenVPN/mintel/LON-LX-L-671.key
+.OpenVPN/mintel/*
 .pip/pip.conf
 .secrets
 .ssh/id_rsa
