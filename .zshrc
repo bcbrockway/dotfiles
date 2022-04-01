@@ -165,3 +165,4 @@ for include in "${INCLUDES[@]}"; do
   fi
 done
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions

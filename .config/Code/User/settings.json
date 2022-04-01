@@ -59,4 +59,5 @@
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
     "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Dark+",
 }

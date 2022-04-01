@@ -204,6 +204,7 @@ for_window [class="Volctl"] floating enable
 for_window [class="zoom" title="^Settings$"] floating enable
 
 # Run on startup
+exec --no-startup-id setxkbmap gb
 #exec --no-startup-id blueman-applet
 exec --no-startup-id /data/github.com/Syphdias/i3-chrome-tab-dragging/i3-chrome-tab-dragging.py
 #exec --no-startup-id insync start
