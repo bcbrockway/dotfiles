@@ -100,6 +100,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # pipx
 export PATH="$PATH:/home/bbrockway/.local/bin"
 
+# eks-power
+export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/eks-power"
+
 # GPG config
 export GNUPGHOME=$HOME/.gnupg
 

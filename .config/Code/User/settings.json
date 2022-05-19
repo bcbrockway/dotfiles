@@ -19,11 +19,9 @@
     "dart.flutterSdkPath": "/home/bbrockway/snap/flutter/common/flutter",
     "diffEditor.ignoreTrimWhitespace": false,
     "docker.showStartPage": false,
-    "editor.fontSize": 12,
     "editor.tabSize": 2,
     "editor.rulers": [120],
     "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
     "files.associations": {
         "*.hcl*": "terraform",
         "*.libsonnet.jinja": "jsonnet",
@@ -44,7 +42,6 @@
     ],
     "terminal.integrated.fontSize": 12,
     "update.mode": "none",
-    "vscode-kubernetes.kubectl-path": "/home/bbrockway/.asdf/shims/kubectl",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -58,6 +55,9 @@
     },
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Default Dark+",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "normal",
+    "vscode-kubernetes.kubectl-path": "~/.asdf/installs/kubectl/1.21.2/bin/kubectl",
+    "window.zoomLevel": 1,
 }

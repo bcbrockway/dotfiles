@@ -56,6 +56,8 @@ b64_decode () {
   echo "$1" | base64 -d
 }
 
+alias apti="sudo apt update && sudo apt install "
+alias aptu="sudo apt update && sudo apt upgrade"
 alias authme=". ~/scripts/vault-auth.sh"
 alias cmcps="ps -ef | grep -i"
 alias denc="b64_decode "
@@ -175,20 +177,20 @@ tgclean () {
 
 alias tga='terragrunt apply'
 alias tgap='terragrunt apply planfile'
-alias tgaa='terragrunt run-all apply'
-alias tgaap='terragrunt run-all apply planfile'
-alias tgaau='terragrunt run-all apply --terragrunt-source-update'
+alias tgaa='terragrunt run-all apply --terragrunt-parallelism 4'
+alias tgaap='terragrunt run-all apply planfile --terragrunt-parallelism 4'
+alias tgaau='terragrunt run-all apply --terragrunt-source-update --terragrunt-parallelism 4'
 alias tgau='terragrunt apply --terragrunt-source-update'
 alias tgd='terragrunt destroy'
-alias tgda='terragrunt run-all destroy'
-alias tgdau='terragrunt run-all destroy --terragrunt-source-update'
+alias tgda='terragrunt run-all destroy --terragrunt-parallelism 4'
+alias tgdau='terragrunt run-all destroy --terragrunt-source-update --terragrunt-parallelism 4'
 alias tgdu='terragrunt destroy --terragrunt-source-update'
-alias tgi='terragrunt init'
-alias tgia='terragrunt run-all init'
+alias tgi='terragrunt init -upgrade'
+alias tgia='terragrunt run-all init -upgrade --terragrunt-parallelism 4'
 alias tgo='terragrunt output'
 alias tgp='terragrunt plan -out=planfile'
-alias tgpa='terragrunt run-all plan -out=planfile'
-alias tgpau='terragrunt run-all plan -out=planfile --terragrunt-source-update'
+alias tgpa='terragrunt run-all plan -out=planfile --terragrunt-parallelism 4'
+alias tgpau='terragrunt run-all plan -out=planfile --terragrunt-source-update --terragrunt-parallelism 4'
 alias tgpu='terragrunt plan -out=planfile --terragrunt-source-update'
 alias tgpu='terragrunt plan -out=planfile --terragrunt-source-update'
 alias tgr='terragrunt refresh'
