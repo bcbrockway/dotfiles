@@ -3,7 +3,7 @@
 set -e
 
 BACKGROUND="/home/bbrockway/wallpaper/dolomites.jpg"
-
+CMD="polybar --config=~/.config/polybar/config.ini --reload taskbar"
 
 function reload_polybar() {
   if pgrep -x polybar; then
@@ -14,11 +14,11 @@ function reload_polybar() {
   fi
   if type "xrandr"; then
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-      MONITOR=$m polybar --reload taskbar &
+      MONITOR=$m $CMD &
       sleep 0.5
     done
   else
-    polybar --reload taskbar &
+    $CMD &
   fi
 }
 

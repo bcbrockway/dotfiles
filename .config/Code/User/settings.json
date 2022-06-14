@@ -19,13 +19,17 @@
     "dart.flutterSdkPath": "/home/bbrockway/snap/flutter/common/flutter",
     "diffEditor.ignoreTrimWhitespace": false,
     "docker.showStartPage": false,
-    "editor.tabSize": 2,
+    "editor.fontSize": 12,
+    "editor.fontWeight": "normal",
     "editor.rulers": [120],
+    "editor.tabSize": 2,
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
         "*.hcl*": "terraform",
-        "*.libsonnet.jinja": "jsonnet",
         "*.jsonnet.jinja": "jsonnet",
+        "*.libsonnet.jinja": "jsonnet",
+        ".tool-versions": "plaintext",
+        "Makefile*": "makefile",
         "PKGBUILD": "plaintext",
     },
     "files.insertFinalNewline": true,
@@ -34,30 +38,27 @@
     "git.confirmSync": false,
     "go.formatTool": "goimports",
     "go.toolsManagement.autoUpdate": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "opa.checkOnSave": true,
+    "opa.path": "/home/bbrockway/.asdf/installs/opa/0.26.0/bin/opa",
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
     "python.showStartPage": false,
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.exclude": [
         "1091"
     ],
     "terminal.integrated.fontSize": 12,
     "update.mode": "none",
+    "vscode-kubernetes.kubectl-path": "~/.asdf/installs/kubectl/1.21.2/bin/kubectl",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "opa.path": "/home/bbrockway/.asdf/installs/opa/0.26.0/bin/opa",
-    "opa.checkOnSave": true,
-    "editor.minimap.enabled": false,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "redhat.telemetry.enabled": false,
-    "security.workspace.trust.untrustedFiles": "open",
     "workbench.colorTheme": "Default Dark+",
-    "editor.fontSize": 12,
-    "editor.fontWeight": "normal",
-    "vscode-kubernetes.kubectl-path": "~/.asdf/installs/kubectl/1.21.2/bin/kubectl",
-    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
 }

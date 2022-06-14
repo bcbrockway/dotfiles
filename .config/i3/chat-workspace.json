@@ -1,6 +1,6 @@
 // vim:ts=4:sw=4:et
 {
-    // tabbed split container with 1 children
+    // tabbed split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "tabbed",
@@ -20,44 +20,11 @@
             },
             "marks": [],
             "name": "Flowdock",
-            "percent": 1,
-            "swallows": [
-               {
-                 "class": "^Google\\-chrome$",
-                 "instance": "^www\\.flowdock\\.com$"
-               }
-            ],
-            "type": "con"
-        }
-    ]
-}
-
-{
-    // tabbed split container with 2 children
-    "border": "normal",
-    "floating": "auto_off",
-    "layout": "tabbed",
-    "marks": [],
-    "percent": 0.3,
-    "type": "con",
-    "nodes": [
-        {
-            "border": "pixel",
-            "current_border_width": 5,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 1009,
-               "width": 1890,
-               "x": 350,
-               "y": 1440
-            },
-            "marks": [],
-            "name": "WorkFlowy",
             "percent": 0.5,
             "swallows": [
                {
-                 "class": "^Google\\-chrome$",
-                 "instance": "^workflowy\\.com$"
+                   "class": "^Google\\-chrome$",
+                   "instance": "^www\\.flowdock\\.com$"
                }
             ],
             "type": "con"
@@ -73,12 +40,46 @@
                "y": 25
             },
             "marks": [],
-            "name": "Chat",
+            "name": "Google Chat",
             "percent": 0.5,
             "swallows": [
                {
-                 "class": "^Google\\-chrome$",
-                 "instance": "^mail\\.google\\.com__chat_u_0$"
+                  "class": "^Google\\-chrome$",
+                  "instance": "^mail\\.google\\.com__chat_u_0$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // tabbed split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "marks": [],
+    "name": "Workflowy",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1009,
+               "width": 1890,
+               "x": 350,
+               "y": 1440
+            },
+            "marks": [],
+            "name": "Daily - WorkFlowy",
+            "percent": 1,
+            "swallows": [
+               {
+                  "class": "^Google\\-chrome$",
+                  "instance": "^workflowy\\.com$"
                }
             ],
             "type": "con"

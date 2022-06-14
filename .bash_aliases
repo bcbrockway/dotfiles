@@ -21,8 +21,9 @@ alias aim="cd /data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-
 alias archinst="cd /data/bcbrockway/archinstall "
 alias docs="cd /data/gitlab.com/mintel/satoshi/docs "
 alias ds="cd /data/gitlab.com/mintel/satoshi "
-alias dskz="cd /data/gitlab.com/mintel/satoshi/kubernetes/kustomize "
-alias gh="cd /data/github.com "
+alias dsk="cd /data/gitlab.com/mintel/satoshi/kubernetes "
+alias dskj="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet "
+alias dsi="cd /data/gitlab.com/mintel/satoshi/infrastructure "
 
 ############
 ##  Flux  ##
@@ -56,8 +57,11 @@ b64_decode () {
   echo "$1" | base64 -d
 }
 
-alias apti="sudo apt update && sudo apt install "
-alias aptu="sudo apt update && sudo apt upgrade"
+alias apti="sudo apt install "
+alias aptl="sudo apt list "
+alias aptlu="sudo apt list --upgradable "
+alias aptud="sudo apt update "
+alias aptug="sudo apt upgrade "
 alias authme=". ~/scripts/vault-auth.sh"
 alias cmcps="ps -ef | grep -i"
 alias denc="b64_decode "

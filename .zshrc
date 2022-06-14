@@ -100,6 +100,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # pipx
 export PATH="$PATH:/home/bbrockway/.local/bin"
 
+# cargo
+export PATH="$PATH:/home/bbrockway/.cargo/bin"
+
 # eks-power
 export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/eks-power"
 
