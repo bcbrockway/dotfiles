@@ -106,6 +106,9 @@ export PATH="$PATH:/home/bbrockway/.cargo/bin"
 # eks-power
 export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/eks-power"
 
+# secrets-manager-copy
+export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/aws-secrets-manager-copy"
+
 # GPG config
 export GNUPGHOME=$HOME/.gnupg
 

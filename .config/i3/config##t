@@ -193,6 +193,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Floating defaults
 assign [class="^zoom.*"] 10
 for_window [class="Arandr"] floating enable, resize set 1024 768
+for_window [class="Authy Desktop"] floating disable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="dolphin"] floating enable
 for_window [class="firefox" title=".*Google Hangouts.*"] floating disable

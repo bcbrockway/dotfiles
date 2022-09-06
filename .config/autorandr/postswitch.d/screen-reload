@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 BACKGROUND="/home/bbrockway/wallpaper/dolomites.jpg"
 CMD="polybar --config=~/.config/polybar/config.ini --reload taskbar"

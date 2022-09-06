@@ -15,11 +15,26 @@
 			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-modules"
 		},
 		{
+			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-live"
+		},
+		{
+			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-modules"
+		},
+		{
+			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/terraform-cloud"
+		},
+		{
+			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/terraform-modules"
+		},
+		{
+			"path": "/data/gitlab.com/mintel/satoshi/infrastructure/terragrunt-git-repos"
+		},
+		{
 			"path": "empty/2",
 			"name": "---------------------------------------------"
 		},
 		{
-			"path": "/data/gitlab.com/mintel/satoshi/kubernetes/argocd-bootstrap"
+			"path": "/data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/tanka/argocd-bootstrap"
 		},
 		{
 			"path": "/data/gitlab.com/mintel/satoshi/kubernetes/jsonnet"
@@ -29,11 +44,17 @@
 			"name": "---------------------------------------------"
 		},
 		{
+			"path": "/data/gitlab.com/mintel/satoshi/ci-cd"
+		},
+		{
 			"path": "/data/gitlab.com/mintel/satoshi/docs"
 		},
 		{
-			"path": "../../data/gitlab.com/mintel/personal-dev/epiusogiji/terraform-cloud-poc/tooling"
-		}
+			"path": "/data/gitlab.com/mintel/satoshi/policies"
+		},
+		{
+			"path": "/data/gitlab.com/mintel/satoshi/tools"
+		},
 	],
 	"settings": {
 		"makefile.extensionOutputFolder": "./.vscode"
