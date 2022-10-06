@@ -25,30 +25,6 @@ alias dsk="cd /data/gitlab.com/mintel/satoshi/kubernetes "
 alias dskj="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet "
 alias dsi="cd /data/gitlab.com/mintel/satoshi/infrastructure "
 
-############
-##  Flux  ##
-############
-
-alias fluxctl="fluxctl --k8s-fwd-ns flux-apps "
-
-###########
-##  GCP  ##
-###########
-
-attach_cluster () {
-  local cluster; cluster="$1"
-  local region; region="$2"
-  . ~/scripts/vault-auth.sh
-  gcloud container clusters get-credentials "$cluster" --region "$region"
-}
-
-alias bb1="attach_cluster bb1 europe-west1"
-alias cw1="attach_cluster cw1 europe-west1"
-alias eu-qa1="attach_cluster eu-qa1 europe-west1"
-alias eu-prod1="attach_cluster eu-prod1 europe-west1"
-alias us-prod1="attach_cluster us-prod1 us-east4"
-alias vault="attach_cluster vault europe-west1"
-
 ###############
 ##  General  ##
 ###############
@@ -77,23 +53,6 @@ alias watch="watch "
 ##################
 ##  Kubernetes  ##
 ##################
-
-flux_logs () {
-  local instance; instance=$1
-  echo stern -n "$instance" "$instance" -c flux$ "${@:2}"
-  stern -n "$instance" "$instance" -c flux$ "${@:2}"
-}
-
-host_exec () {
-  local args; args=("${@}")
-  echo "${args[*]}"
-  # shellcheck disable=SC2086
-  local node; node=$(kubectl get pods -o json ${args[*]} | jq -r .spec.nodeName)
-  echo "$node"
-  local ppod; ppod=$(kubectl -n kube-system get pods -l name=host-configurator -o json | jq -r '.items[] | select(.spec.nodeName|contains("'$node'")) | .metadata.name')
-  echo "$ppod"
-  kubectl -n kube-system exec -it "$ppod" -- nsenter -t 1 -m -u -i -n -p
-}
 
 self_heal() {
 
@@ -150,21 +109,8 @@ watch_pods () {
   watch "eval 'kubectl --namespace='{$namespaces}' get pods;'"
 }
 
-alias fluxa="flux_logs flux-apps "
-alias fluxb="flux_logs flux-bootstrap "
-alias heti="host_exec "
 alias selfheal="self_heal "
 alias setf="set-finalizer "
-alias wgp="watch_pods "
-
-#################
-##  Kustomize  ##
-#################
-
-alias kzv="kustomize build . | vim -c 'set syntax=yaml' - "
-alias kza="kustomize build . | kubectl apply -f - "
-alias kzb="kustomize build . "
-alias kzdel="kustomize build . | kubectl delete -f - "
 
 ##############################
 ##  Terraform / Terragrunt  ##

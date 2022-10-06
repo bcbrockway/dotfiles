@@ -94,6 +94,9 @@ export PATH=$PATH:/data/gitlab.com/mintel/satoshi/tools/vpa-scraper
 # ail scripts
 export PATH=$PATH:/data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live/scripts
 
+# my scripts
+export PATH=$PATH:~/scripts
+
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

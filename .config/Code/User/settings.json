@@ -40,6 +40,12 @@
     "git.confirmSync": false,
     "go.formatTool": "goimports",
     "go.toolsManagement.autoUpdate": true,
+    "hadolint": {
+        "hadolintPath": "/home/bbrockway/.asdf/installs/hadolint/2.6.0/bin/hadolint",
+        "cliOptions": [
+            "--config", "/data/gitlab.com/mintel/satoshi/policies/docker-lint/config.yml"
+        ]
+    },
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"

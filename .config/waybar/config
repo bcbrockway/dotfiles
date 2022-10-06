@@ -1,0 +1,32 @@
+{
+    "height": 28,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "tray"],
+    "sway/workspaces": {
+        "all-outputs": false,
+        "current-only": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+        }
+    },
+    "clock": {
+        "format": "{:%a %d %b %y | %H:%M:%S}",
+        "interval": 1
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {usage:3}%"
+    }
+}

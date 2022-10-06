@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+import argparse
+import string
+import subprocess
+import json
+from tokenize import String
+
+parser = argparse.ArgumentParser()
+parser.add_argument('type')
+parser.add_argument('name')
+parser.add_argument('-n', '--namespace')
+args = parser.parse_args()
+
+cmd = ['kubectl', '-n', args.namespace, '-o', 'json', 'get', args.type, args.name]
+result = subprocess.run(cmd, capture_output=True)
+workloadJSON = json.loads(result.stdout)
+selectorLabels = workloadJSON['spec']['selector']['matchLabels']
+selectorLabelString = ''
+for k, v in selectorLabels.items():
+  selectorLabelString += '%s=%s,' % (k, v)
+selectorLabelString = selectorLabelString.rstrip(',')
+
+cmd = ['kubectl', '-n', args.namespace, '-o', 'json', 'get', 'pods', '-l', selectorLabelString]
+result = subprocess.run(cmd, capture_output=True)
+podsJSON = json.loads(result.stdout)
+
+output = dict()
+for pod in podsJSON['items']:
+  podName = pod['metadata']['name']
+  nodeName = pod['spec']['nodeName']
+  cmd = ['kubectl', '-n', args.namespace, '-o', 'json', 'get', 'nodes', nodeName]
+  result = subprocess.run(cmd, capture_output=True)
+  nodeJSON = json.loads(result.stdout)
+  output[podName] = {'nodeName': nodeName, 'labels': nodeJSON['metadata']['labels']}
+
+print(json.dumps(output))

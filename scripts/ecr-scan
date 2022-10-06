@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+import argparse
+import string
+import re
+import subprocess
+import json
+from tokenize import String
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-e', '--only-empty')
+parser.add_argument('-i', '--include')
+args = parser.parse_args()
+
+
+cmd = ['aws', '--region', 'us-east-2', 'ecr', 'describe-repositories']
+result = subprocess.run(cmd, capture_output=True)
+reposJSON = json.loads(result.stdout)
+if args.include:
+  filtered = [repo for repo in reposJSON['repositories'] if re.search(args.include, repo['repositoryName'])]
+else:
+  filtered = reposJSON['repositories']
+for repo in filtered:
+  repositoryName = repo.get('repositoryName')
+  cmd = ['aws', '--region', 'us-east-2', 'ecr', 'list-images', '--repository-name', repositoryName]
+  result = subprocess.run(cmd, capture_output=True)
+  imagesJSON = json.loads(result.stdout)
+  imageIDs = imagesJSON.get('imageIds')
+  if imageIDs == []:
+    print("%s: %s" % (repositoryName, imageIDs))

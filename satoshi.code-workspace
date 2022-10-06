@@ -47,7 +47,7 @@
 			"path": "/data/gitlab.com/mintel/satoshi/ci-cd"
 		},
 		{
-			"path": "/data/gitlab.com/mintel/satoshi/docs"
+			"path": "/data/gitlab.com/mintel/satoshi/documentation"
 		},
 		{
 			"path": "/data/gitlab.com/mintel/satoshi/policies"

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+home_serial="JBLMQS096191"
+laptop="eDP-1"
+
+# Start way-displays server
+if ! pgrep way-displays; then
+  nohup way-displays > "/tmp/way-displays.${XDG_VTNR}.${USER}.log" 2>&1 &
+fi
+
+sleep 1
+
+jq() {
+	/home/bbrockway/.asdf/shims/jq "${*}"
+}
+
+outputs=$(swaymsg -t get_outputs)
+if [[ $(echo "$outputs" | jq '[.[] | select(.serial=="JBLMQS096191")] | length') -eq 1 ]]; then
+  way-displays -s ORDER "$home_serial" "$laptop"
+  way-displays -s ARRANGE_ALIGN row bottom
+fi
