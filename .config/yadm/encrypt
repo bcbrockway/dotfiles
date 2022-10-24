@@ -1,9 +1,12 @@
 .aws/config
 .gnupg/*
 .gnupg/private-keys-v1.d/*
+.kube/config
 .npmrc
 .OpenVPN/mintel/*
 .pip/pip.conf
 .secrets
+.ssh/config
 .ssh/id_rsa
 .ssh/id_rsa.pub
+.ssh/id_rsa_mintel
