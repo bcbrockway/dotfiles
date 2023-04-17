@@ -85,12 +85,6 @@ export AWS_PAGER=""
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
-# kubectx/kubens config
-export PATH=$PATH:~/git/github.com/ahmetb/kubectx
-
-# vpa-scraper
-export PATH=$PATH:/data/gitlab.com/mintel/satoshi/tools/vpa-scraper
-
 # ail scripts
 export PATH=$PATH:/data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live/scripts
 
@@ -114,6 +108,9 @@ export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/aws-secrets-manager-cop
 
 # GPG config
 export GNUPGHOME=$HOME/.gnupg
+
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

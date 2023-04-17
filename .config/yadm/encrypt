@@ -1,4 +1,5 @@
 .aws/config
+.edgerc
 .gnupg/*
 .gnupg/private-keys-v1.d/*
 .kube/config

@@ -21,7 +21,9 @@
     "docker.showStartPage": false,
     "editor.fontSize": 12,
     "editor.fontWeight": "normal",
-    "editor.rulers": [120],
+    "editor.rulers": [
+        120
+    ],
     "editor.tabSize": 2,
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
@@ -36,16 +38,29 @@
     },
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.terragrunt-cache/*/**": true,
+        "**/.venv/*/**": true,
+        "**/node_modules/*/**": true,
+        "**/venv/*/**": true,
+    },
     "git.autofetch": true,
     "git.confirmSync": false,
     "go.formatTool": "goimports",
     "go.toolsManagement.autoUpdate": true,
     "hadolint": {
         "hadolintPath": "/home/bbrockway/.asdf/installs/hadolint/2.6.0/bin/hadolint",
-        "cliOptions": [
-            "--config", "/data/gitlab.com/mintel/satoshi/policies/docker-lint/config.yml"
-        ]
+        // "cliOptions": [
+        //     "--config", "/data/gitlab.com/mintel/satoshi/policies/docker-lint/config.yml"
+        // ]
     },
+    "jsonnet.languageServer.jpath": [
+        "lib",
+        "vendor",
+        "/home/bbrockway/.asdf/installs/helm/3.9.4/bin/helm"
+    ],
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -62,11 +77,30 @@
     ],
     "terminal.integrated.fontSize": 12,
     "update.mode": "none",
-    "vscode-kubernetes.kubectl-path": "~/.asdf/installs/kubectl/1.21.2/bin/kubectl",
+    "vscode-kubernetes.kubectl-path": "/home/bbrockway/.asdf/installs/kubectl/1.22.8/bin/kubectl",
+    "vscode-kubernetes.helm-path": "/home/bbrockway/.asdf/installs/helm/3.9.4/bin/helm",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.colorTheme": "Default Dark+",
     "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=120"
+    ],
+    "yaml.format.enable": false,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/quintush/helm-unittest/master/schema/helm-testsuite.json": [
+            "**/charts/*/tests/*_test.yaml"
+        ]
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "yaml.schemaStore.enable": false,
+    "isort.args": [
+        "--profile black"
+    ]
 }

@@ -28,17 +28,6 @@ default_border pixel 2
 gaps inner 10
 gaps outer 0
 
-set $opacity 0.9
-for_window [app_id="Alacritty"] opacity $opacity
-for_window [class="Code"] opacity $opacity
-for_window [class="jetbrains-goland"] opacity $opacity
-for_window [class="jetbrains-pycharm-ce"] opacity $opacity
-for_window [app_id="Rofi"] opacity $opacity
-for_window [class="Spotify"] opacity $opacity
-for_window [class="URxvt"] opacity $opacity
-for_window [class="mail.google.com__chat_u_0"] opacity $opacity
-for_window [class="www.flowdock.co"] opacity $opacity
-
 ### Behaviour
 focus_follows_mouse yes
 
@@ -228,10 +217,28 @@ bindsym $mod+r mode "resize"
 #
 # Programs:
 #
-bindsym $mod+Shift+p exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --user-data-dir=/home/bbrockway/.config/chromium-personal
-bindsym $mod+Shift+w exec google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland
+set $opacity 0.9
+for_window [app_id="Alacritty"] opacity $opacity
+# Ensure Sway shortcuts will work when using Chrome --app windows: https://github.com/swaywm/sway/issues/7106
+for_window [app_id="^chrome-.*"] shortcuts_inhibitor disable
+for_window [class="Code"] opacity $opacity
+for_window [class="jetbrains-goland"] opacity $opacity
+for_window [class="jetbrains-pycharm-ce"] opacity $opacity
+for_window [app_id="Rofi"] opacity $opacity
+for_window [class="Spotify"] opacity $opacity
+for_window [class="URxvt"] opacity $opacity
+for_window [class="mail.google.com__chat_u_0"] opacity $opacity
+for_window [class="www.flowdock.co"] opacity $opacity
+for_window [app_id="zoom" title="Settings"] floating enable, floating_maximum_size 1000 x 800
+
+# set $chromeSettings --enable-features=UseOzonePlatform --ozone-platform=wayland
+bindsym $mod+Shift+c exec code
+bindsym $mod+Shift+f exec google-chrome-stable $chromeSettings --app=https://mail.google.com/chat/u/0/#chat/welcome
+bindsym $mod+Shift+p exec google-chrome-stable $chromeSettings --user-data-dir=/home/bbrockway/.config/chromium-personal
+bindsym $mod+Shift+w exec google-chrome-stable $chromeSettings
+#bindsym $mod+Shift+w exec firefox
 # Use swaylock fork: https://github.com/mortie/swaylock-effects
-bindsym $mod+Shift+x exe swaylock --screenshots --effect-blur 5x3
+bindsym $mod+Shift+x exec swaylock --screenshots --effect-blur 5x3
 
 #
 # Startup
@@ -250,26 +257,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 
-bar swaybar_command waybar
 # waybar 0.9.9 crashes randomly; 0.9.12 seems better but doesn't have a status bar built in so switched to waybar
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    font "Ubuntu Bold 10"
-#    height 28
-#    position top
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    status_command while date +'%a %d %b %y %H:%M:%S'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
+bar swaybar_command waybar
 
 include /etc/sway/config.d/*

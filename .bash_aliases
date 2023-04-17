@@ -16,14 +16,18 @@ adecode () {
 ##  Directories  ##
 ###################
 
+alias acdb="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/tanka/argocd-bootstrap"
 alias ail="cd /data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live"
 alias aim="cd /data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-modules"
 alias archinst="cd /data/bcbrockway/archinstall "
+alias argocd-bootstrap="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/tanka/argocd-bootstrap"
 alias docs="cd /data/gitlab.com/mintel/satoshi/docs "
 alias ds="cd /data/gitlab.com/mintel/satoshi "
 alias dsk="cd /data/gitlab.com/mintel/satoshi/kubernetes "
 alias dskj="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet "
 alias dsi="cd /data/gitlab.com/mintel/satoshi/infrastructure "
+alias experimental="cd /data/gitlab.com/mintel/satoshi/experimental"
+alias oil="cd /data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-live"
 
 ###############
 ##  General  ##
@@ -36,6 +40,7 @@ b64_decode () {
 alias apti="sudo apt install "
 alias aptl="sudo apt list "
 alias aptlu="sudo apt list --upgradable "
+alias aptr="sudo apt remove "
 alias aptud="sudo apt update "
 alias aptug="sudo apt upgrade "
 alias authme=". ~/scripts/vault-auth.sh"
@@ -55,25 +60,25 @@ alias watch="watch "
 ##################
 
 self_heal() {
-
   local STATUS; STATUS=$1; shift
   local APP_NAMES; APP_NAMES=( "$@" )
-  local ENABLED
+  local onJSON; onJSON='{"spec": {"syncPolicy": {"automated":{"allowEmpty": false, "prune": true, "selfHeal": true}}}}'
+  local offJSON; offJSON='{"spec": {"syncPolicy": null}}'
 
   if [[ $STATUS == off ]]; then
-    ENABLED=false
+    kubectl patch -n argocd app argocd-bootstrap --patch "${offJSON}" --type merge
+    for APP_NAME in "${APP_NAMES[@]}"; do
+        kubectl patch -n argocd app "$APP_NAME" --patch "${offJSON}" --type merge
+    done
   elif [[ $STATUS == on ]]; then
-    ENABLED=true
+    kubectl patch -n argocd app argocd-bootstrap --patch "${onJSON}" --type merge
+    for APP_NAME in "${APP_NAMES[@]}"; do
+      kubectl patch -n argocd app "$APP_NAME" --patch "${onJSON}" --type merge
+    done
   else
     echo "first argument should be \"off\" or \"on\""
     exit
   fi
-  
-  kubectl patch -n argocd app argocd-bootstrap -p '{"spec": {"syncPolicy": {"automated": {"selfHeal": '$ENABLED'}}}}' --type merge
-  
-  for APP_NAME in "${APP_NAMES[@]}"; do
-    kubectl patch -n argocd app "$APP_NAME" -p '{"spec": {"syncPolicy": {"automated": {"selfHeal": '$ENABLED'}}}}' --type merge
-  done
 }
 
 set-finalizer () {
@@ -111,6 +116,7 @@ watch_pods () {
 
 alias selfheal="self_heal "
 alias setf="set-finalizer "
+alias kc="kubectx "
 
 ##############################
 ##  Terraform / Terragrunt  ##
@@ -144,6 +150,7 @@ alias tgpau='terragrunt run-all plan -out=planfile --terragrunt-source-update --
 alias tgpu='terragrunt plan -out=planfile --terragrunt-source-update'
 alias tgpu='terragrunt plan -out=planfile --terragrunt-source-update'
 alias tgr='terragrunt refresh'
+alias tgs='terragrunt show -json planfile | jq . | less'
 alias tgt='terragrunt taint'
 
 ############

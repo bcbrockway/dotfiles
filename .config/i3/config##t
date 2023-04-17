@@ -180,7 +180,6 @@ bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
 bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-chat-workspace.sh
 bindsym $mod+Shift+m exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
 bindsym $mod+Shift+p exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-personal
-bindsym $mod+Shift+t exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-personal --app=https://tweetdeck.twitter.com
 bindsym $mod+Shift+w exec google-chrome-stable
 bindsym $mod+Shift+x exec i3lock-fancy-rapid 5 3
 bindsym Print exec flameshot gui
@@ -210,6 +209,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id pasystray
 exec --no-startup-id udiskie --tray
+exec --no-startup-id zoom
 exec --no-startup-id "sleep 0.2; autorandr --change"
 
 # Run on refresh
