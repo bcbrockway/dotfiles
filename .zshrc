@@ -85,8 +85,8 @@ export AWS_PAGER=""
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
-# ail scripts
-export PATH=$PATH:/data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live/scripts
+# ec2-ssh
+export PATH=$PATH:/data/gitlab.com/mintel/satoshi/tools/ec2-ssh
 
 # my scripts
 export PATH=$PATH:~/scripts
@@ -109,8 +109,8 @@ export PATH="$PATH:/data/gitlab.com/mintel/satoshi/tools/aws-secrets-manager-cop
 # GPG config
 export GNUPGHOME=$HOME/.gnupg
 
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# pass config
+export PASSWORD_STORE_DIR=/data/gitlab.com/mintel/infra/secret-store-v1
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

@@ -28,6 +28,7 @@ alias dskj="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet "
 alias dsi="cd /data/gitlab.com/mintel/satoshi/infrastructure "
 alias experimental="cd /data/gitlab.com/mintel/satoshi/experimental"
 alias oil="cd /data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-live"
+alias oim="cd /data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-modules"
 
 ###############
 ##  General  ##
@@ -66,15 +67,18 @@ self_heal() {
   local offJSON; offJSON='{"spec": {"syncPolicy": null}}'
 
   if [[ $STATUS == off ]]; then
-    kubectl patch -n argocd app argocd-bootstrap --patch "${offJSON}" --type merge
-    for APP_NAME in "${APP_NAMES[@]}"; do
+      kubectl patch -n argocd app argocd-bootstrap --patch "${offJSON}" --type merge
+      for APP_NAME in "${APP_NAMES[@]}"; do
         kubectl patch -n argocd app "$APP_NAME" --patch "${offJSON}" --type merge
-    done
+      done
   elif [[ $STATUS == on ]]; then
-    kubectl patch -n argocd app argocd-bootstrap --patch "${onJSON}" --type merge
-    for APP_NAME in "${APP_NAMES[@]}"; do
-      kubectl patch -n argocd app "$APP_NAME" --patch "${onJSON}" --type merge
-    done
+    if [[ ${#APP_NAMES[@]} -eq 0 ]]; then
+      kubectl patch -n argocd app argocd-bootstrap --patch "${onJSON}" --type merge
+    else
+      for APP_NAME in "${APP_NAMES[@]}"; do
+        kubectl patch -n argocd app "$APP_NAME" --patch "${onJSON}" --type merge
+      done
+    fi
   else
     echo "first argument should be \"off\" or \"on\""
     exit
@@ -96,7 +100,7 @@ set-finalizer () {
       args=(-n argocd)
       ;;
     none)
-      json='{ "spec": { "finalizers": [] }}'
+      json='{ "metadata": { "finalizers": [] }}'
       ;;
     *)
       echo "Not supported"

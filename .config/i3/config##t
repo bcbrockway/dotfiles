@@ -48,7 +48,7 @@ mouse_warping output
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec /home/bbrockway/.cargo/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -176,11 +176,13 @@ bindsym $mod+r mode "resize"
 
 # custom key bindings
 bindsym $mod+x exec alacritty -t Ranger -e ranger
+bindsym $mod+Shift+a exec authy
 bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
 bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-chat-workspace.sh
-bindsym $mod+Shift+m exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-mintelcloud
-bindsym $mod+Shift+p exec google-chrome-stable --user-data-dir=/home/bbrockway/.config/chromium-personal
-bindsym $mod+Shift+w exec google-chrome-stable
+bindsym $mod+Shift+p exec google-chrome-stable --enable-features=NativeNotifications --user-data-dir=/home/bbrockway/.config/chromium-personal
+#bindsym $mod+Shift+p exec firefox --profile ~/.mozilla/firefox/g0fi3yow.Personal
+bindsym $mod+Shift+w exec google-chrome-stable --enable-features=NativeNotifications
+#bindsym $mod+Shift+w exec firefox --profile ~/.mozilla/firefox/2h7xpww9.default-release
 bindsym $mod+Shift+x exec i3lock-fancy-rapid 5 3
 bindsym Print exec flameshot gui
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -192,11 +194,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Floating defaults
 assign [class="^zoom.*"] 10
 for_window [class="Arandr"] floating enable, resize set 1024 768
-for_window [class="Authy Desktop"] floating disable
+for_window [class="Authy Desktop"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="dolphin"] floating enable
-for_window [class="firefox" title=".*Google Hangouts.*"] floating disable
-for_window [class="firefox" title=".*Flowdock.*"] floating disable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable, resize set 1024 768
 for_window [class="Volctl"] floating enable

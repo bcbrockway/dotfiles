@@ -9,32 +9,37 @@
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         "editor.suggestSelection": "first",
         "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": false
+        "editor.wordBasedSuggestions": "off"
     },
     "[jsonnet]": {
         "editor.tabSize": 2
     },
-    "dart.debugExternalLibraries": false,
-    "dart.debugSdkLibraries": false,
-    "dart.flutterSdkPath": "/home/bbrockway/snap/flutter/common/flutter",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "docker.showStartPage": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "black-formatter.args": [
+        "--line-length=120"
+    ],
     "editor.fontSize": 12,
     "editor.fontWeight": "normal",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
     "editor.rulers": [
         120
     ],
     "editor.tabSize": 2,
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
-        "*.hcl*": "terraform",
+        ".tool-versions": "plaintext",
         "*.jsonnet.jinja": "jsonnet",
         "*.libsonnet.jinja": "jsonnet",
-        ".tool-versions": "plaintext",
-        "Makefile*": "makefile",
-        "PKGBUILD": "plaintext",
         "**/i3/config": "i3",
         "**/sway/config": "i3",
+        "Makefile*": "makefile",
+        "PKGBUILD": "plaintext",
+        "*.hcl*": "terraform"
     },
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
@@ -44,18 +49,21 @@
         "**/.terragrunt-cache/*/**": true,
         "**/.venv/*/**": true,
         "**/node_modules/*/**": true,
-        "**/venv/*/**": true,
+        "**/venv/*/**": true
     },
+    "flake8.args": [
+        "--max-line-length=120"
+    ],
     "git.autofetch": true,
     "git.confirmSync": false,
+    "gitlab.aiAssistedCodeSuggestions.enabled": true,
+    "gitlab.debug": true,
     "go.formatTool": "goimports",
     "go.toolsManagement.autoUpdate": true,
-    "hadolint": {
-        "hadolintPath": "/home/bbrockway/.asdf/installs/hadolint/2.6.0/bin/hadolint",
-        // "cliOptions": [
-        //     "--config", "/data/gitlab.com/mintel/satoshi/policies/docker-lint/config.yml"
-        // ]
-    },
+    "hadolint.hadolintPath": "/home/bbrockway/.asdf/installs/hadolint/2.12.0/bin/hadolint",
+    "isort.args": [
+        "--profile black"
+    ],
     "jsonnet.languageServer.jpath": [
         "lib",
         "vendor",
@@ -67,9 +75,9 @@
     },
     "opa.checkOnSave": true,
     "opa.path": "/home/bbrockway/.asdf/installs/opa/0.26.0/bin/opa",
-    "python.linting.enabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.showStartPage": false,
+    "python.pipenvPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/pipenv",
+    "python.poetryPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/poetry",
+    "python.testing.pytestPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/pytest",
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.exclude": [
@@ -77,30 +85,53 @@
     ],
     "terminal.integrated.fontSize": 12,
     "update.mode": "none",
-    "vscode-kubernetes.kubectl-path": "/home/bbrockway/.asdf/installs/kubectl/1.22.8/bin/kubectl",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
     "vscode-kubernetes.helm-path": "/home/bbrockway/.asdf/installs/helm/3.9.4/bin/helm",
-    "workbench.startupEditor": "newUntitledFile",
+    "vscode-kubernetes.kubectl-path": "/home/bbrockway/.asdf/installs/kubectl/1.22.8/bin/kubectl",
+    "workbench.colorTheme": "Default Dark+",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.colorTheme": "Default Dark+",
-    "editor.minimap.enabled": false,
-    "editor.formatOnSave": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length=120"
+    "workbench.startupEditor": "newUntitledFile",
+    "yaml.customTags": [
+        "!And",
+        "!And sequence",
+        "!If",
+        "!If sequence",
+        "!Not",
+        "!Not sequence",
+        "!Equals",
+        "!Equals sequence",
+        "!Or",
+        "!Or sequence",
+        "!FindInMap",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Join",
+        "!Join sequence",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!Sub sequence",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!ImportValue sequence",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Split sequence"
     ],
     "yaml.format.enable": false,
     "yaml.schemas": {
+        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": [
+            ".gitlab-ci.yml"
+        ],
         "https://raw.githubusercontent.com/quintush/helm-unittest/master/schema/helm-testsuite.json": [
             "**/charts/*/tests/*_test.yaml"
         ]
     },
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "yaml.schemaStore.enable": false,
-    "isort.args": [
-        "--profile black"
-    ]
+    "yaml.schemaStore.enable": false
 }

@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term /home/bbrockway/.cargo/bin/alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -245,7 +245,7 @@ bindsym $mod+Shift+x exec swaylock --screenshots --effect-blur 5x3
 #
 exec --no-startup-id nm-applet
 # Following is required for screen sharing (apt install xdg-desktop-portal-wlr)
-exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec --no-startup-id /home/bbrockway/scripts/sway-startup.sh
 
 #
 # Special Keys
