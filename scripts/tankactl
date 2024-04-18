@@ -1,0 +1,94 @@
+#!/bin/bash
+
+set -ex
+
+LOG_FILE=/tmp/test-tanka-generate.log
+PREPARE=1
+
+PARAMS=()
+while (( "$#" )); do
+  case "$1" in
+    --no-prepare)
+      PREPARE=0
+      shift
+      ;;
+    -b|--my-flag-with-argument)
+      if [ -n "$2" ] && [ "${2:0:1}" != "-" ]; then
+        MY_FLAG_ARG=$2
+        shift 2
+      else
+        echo "Error: Argument for $1 is missing" >&2
+        exit 1
+      fi
+      ;;
+    -*=) # unsupported flags
+      echo "Error: Unsupported flag $1" >&2
+      exit 1
+      ;;
+    *) # preserve positional arguments
+      PARAMS+=("$1")
+      shift
+      ;;
+  esac
+done
+# set positional arguments in their proper place
+eval set -- "${PARAMS[*]}"
+
+function clean() {
+  gita super fetch --all
+  gita super reset origin --hard
+  gita super checkout main
+  gita super reset origin --hard
+  gita super pull
+  gita super submodule update
+  gita shell jb install
+  gita super clean -f
+}
+
+gita context tanka >> "$LOG_FILE"
+
+if [[ "${PARAMS[0]}" == clean ]]; then
+  echo "Are you SURE you want to do this (will delete any unsaved changes in all tanka repos!)? [y/N]: "
+  read -r q_clean
+  if [[ "$q_clean" =~ [Yy] ]]; then
+    clean
+    gita super status
+    exit 0
+  fi
+fi
+
+if gita super status | grep -P 'Changes not staged for commit'; then
+  echo "ERROR: Repos not clean. Fix then rerun"
+  exit 1
+fi
+
+if [[ "${PARAMS[0]}" == helm ]]; then
+  echo match
+  cps=(
+    terraform-cloud=/data/github.com/mintel/helm-charts/charts/terraform-cloud
+    standard-application-stack=/data/github.com/mintel/helm-charts/charts/standard-application-stack
+  )
+  for cp in "${cps[@]}"; do
+    name=$(echo "$cp" | cut -f1 -d'=')
+    path=$(echo "$cp" | cut -f2 -d'=')
+    gita shell "if ls charts/$name; then rm -rf charts/$name; ln -s $path charts/$name; fi"
+  done
+fi
+
+if [[ "${PARAMS[0]}" == libs-jsonnet ]]; then
+  echo match
+  cps=(
+    gitlab.com/mintel/satoshi/kubernetes/jsonnet/sre/libs-jsonnet=/data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/libs/libs-jsonnet
+  )
+  for cp in "${cps[@]}"; do
+    vendor_path=$(echo "$cp" | cut -f1 -d'=')
+    repo_path=$(echo "$cp" | cut -f2 -d'=')
+    gita shell "if ls vendor/$vendor_path; then rm -rf vendo/$vendor_path; ln -s $repo_path charts/$vendor_path; fi"
+  done
+fi
+
+echo "Generate manifests? [Y/n]: "
+read -r q_generate
+if [[ ! "$q_generate" =~ [Nn] ]]; then
+  gita shell ./build-harness-extensions/modules/k8s/tanka/generate.sh
+fi

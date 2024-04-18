@@ -2,7 +2,7 @@
 
 set -ex
 
-BACKGROUND="/home/bbrockway/wallpaper/dolomites.jpg"
+BACKGROUND="/home/bbrockway/wallpaper/alps.jpg"
 CMD="polybar --config=~/.config/polybar/config.ini --reload taskbar"
 
 function reload_polybar() {
