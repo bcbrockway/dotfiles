@@ -24,7 +24,6 @@
     ],
     "editor.fontSize": 12,
     "editor.fontWeight": "normal",
-    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.rulers": [
         120
@@ -61,6 +60,8 @@
     "go.formatTool": "goimports",
     "go.toolsManagement.autoUpdate": true,
     "hadolint.hadolintPath": "/home/bbrockway/.asdf/installs/hadolint/2.12.0/bin/hadolint",
+    "html.autoClosingTags": false,
+    "html.format.unformatted": "p,ul,li",
     "isort.args": [
         "--profile black"
     ],
@@ -74,7 +75,7 @@
         "jupyter-notebook": "left"
     },
     "opa.checkOnSave": true,
-    "opa.path": "/home/bbrockway/.asdf/installs/opa/0.26.0/bin/opa",
+    "opa.dependency_paths.opa": "/home/bbrockway/.asdf/installs/opa/0.26.0/bin/opa",
     "python.pipenvPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/pipenv",
     "python.poetryPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/poetry",
     "python.testing.pytestPath": "/home/bbrockway/.asdf/installs/python/3.9.17/bin/pytest",
@@ -133,5 +134,15 @@
             "**/charts/*/tests/*_test.yaml"
         ]
     },
-    "yaml.schemaStore.enable": false
+    "yaml.schemaStore.enable": false,
+    "cue.toolsPath": "$HOME/go/bin",
+    "devbox.enableDebugMode": true,
+    "editor.formatOnSave": true,
+    "D2.previewLayout": "elk",
+    "D2.updateOnSave": true,
+    "D2.autoUpdate": false,
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+    }
 }

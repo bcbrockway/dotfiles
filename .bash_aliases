@@ -19,16 +19,17 @@ adecode () {
 alias acdb="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/tanka/argocd-bootstrap"
 alias ail="cd /data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-live"
 alias aim="cd /data/gitlab.com/mintel/satoshi/infrastructure/aws-infrastructure-modules"
-alias archinst="cd /data/bcbrockway/archinstall "
-alias argocd-bootstrap="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet/tanka/argocd-bootstrap"
-alias docs="cd /data/gitlab.com/mintel/satoshi/docs "
-alias ds="cd /data/gitlab.com/mintel/satoshi "
+alias d2diags="cd /data/gitlab.com/mintel/satoshi/experimental/d2diags"
+alias ds="cd /data/gitlab.com/mintel/satoshi"
 alias dsk="cd /data/gitlab.com/mintel/satoshi/kubernetes "
 alias dskj="cd /data/gitlab.com/mintel/satoshi/kubernetes/jsonnet "
 alias dsi="cd /data/gitlab.com/mintel/satoshi/infrastructure "
 alias experimental="cd /data/gitlab.com/mintel/satoshi/experimental"
+alias ghub="cd /data/github.com"
+alias glab="cd /data/gitlab.com"
 alias oil="cd /data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-live"
 alias oim="cd /data/gitlab.com/mintel/satoshi/infrastructure/okta-infrastructure-modules"
+alias pdev="cd /data/gitlab.com/mintel/personal-dev/bbrockway"
 
 ###############
 ##  General  ##

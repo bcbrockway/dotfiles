@@ -178,11 +178,10 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x exec alacritty -t Ranger -e ranger
 bindsym $mod+Shift+a exec authy
 bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
-bindsym $mod+Shift+f exec /home/bbrockway/.config/i3/start-chat-workspace.sh
+bindsym $mod+Shift+f exec google-chrome-stable --app=https://mail.google.com/chat/u/0/#chat/welcome
+bindsym $mod+Shift+n exec google-chrome-stable --app=https://notion.so
 bindsym $mod+Shift+p exec google-chrome-stable --enable-features=NativeNotifications --user-data-dir=/home/bbrockway/.config/chromium-personal
-#bindsym $mod+Shift+p exec firefox --profile ~/.mozilla/firefox/g0fi3yow.Personal
 bindsym $mod+Shift+w exec google-chrome-stable --enable-features=NativeNotifications
-#bindsym $mod+Shift+w exec firefox --profile ~/.mozilla/firefox/2h7xpww9.default-release
 bindsym $mod+Shift+x exec i3lock-fancy-rapid 5 3
 bindsym Print exec flameshot gui
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -206,11 +205,12 @@ for_window [class="zoom" title="^Settings$"] floating enable
 exec --no-startup-id blueman-applet
 exec --no-startup-id /data/github.com/Syphdias/i3-chrome-tab-dragging/i3-chrome-tab-dragging.py
 exec --no-startup-id nm-applet
-exec --no-startup-id picom --experimental-backends
+exec --no-startup-id picom --daemon
 exec --no-startup-id pasystray
 exec --no-startup-id udiskie --tray
 exec --no-startup-id zoom
 exec --no-startup-id "sleep 0.2; autorandr --change"
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 # Run on refresh
 #exec_always --no-startup-id xrdb -load ~/.Xresources

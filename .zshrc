@@ -78,6 +78,9 @@ export GOPATH=~/go
 export PATH=$PATH:$HOME/bin:$GOPATH/bin
 export FLUX_FORWARD_NAMESPACE=flux-apps
 
+# Android SDK
+export PATH=$PATH:/data/android_sdk/cmdline-tools/latest/bin:/data/android_sdk/platform-tools
+
 # AWS
 export AWS_PAGER=""
 
@@ -112,6 +115,9 @@ export GNUPGHOME=$HOME/.gnupg
 # pass config
 export PASSWORD_STORE_DIR=/data/gitlab.com/mintel/infra/secret-store-v1
 
+# rofi config
+export PATH=$HOME/.config/rofi/scripts:$PATH
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -132,7 +138,8 @@ function start_agent {
     echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
+    /usr/bin/ssh-add ~/.ssh/id_rsa
+    /usr/bin/ssh-add ~/.ssh/id_rsa_mintel
 }
 
 # Source SSH settings, if applicable
@@ -175,3 +182,10 @@ for include in "${INCLUDES[@]}"; do
 done
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+if [ -e /home/bbrockway/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bbrockway/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+export PATH="/usr/local//bin:$PATH"
+export PATH="/usr/local/bin/bin:$PATH"
+
+eval "$(direnv hook zsh)"
