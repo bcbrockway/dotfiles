@@ -181,6 +181,7 @@ bindsym $mod+Shift+c exec /home/bbrockway/.config/i3/start-code-workspace.sh
 bindsym $mod+Shift+f exec google-chrome-stable --app=https://mail.google.com/chat/u/0/#chat/welcome
 bindsym $mod+Shift+n exec google-chrome-stable --app=https://notion.so
 bindsym $mod+Shift+p exec google-chrome-stable --enable-features=NativeNotifications --user-data-dir=/home/bbrockway/.config/chromium-personal
+bindsym $mod+Shift+t exec google-chrome-stable --app=https://app.todoist.com
 bindsym $mod+Shift+w exec google-chrome-stable --enable-features=NativeNotifications
 bindsym $mod+Shift+x exec i3lock-fancy-rapid 5 3
 bindsym Print exec flameshot gui
